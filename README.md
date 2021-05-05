@@ -14,12 +14,12 @@ The Graft Wallet is a Fork of the Cake/Oxen Wallet.
     flutter pub run build_runner build
     ```
 
-3. To download the latest build of the Oxen Dependencies run 
+3. To download the latest build of the Graft Dependencies run 
    ```
    ./tool/download-android-deps.sh https://oxen.rocks/oxen-io/oxen-core/oxen-stable-android-deps-LATEST.tar.xz
    ./tool/download-ios-deps.sh https://oxen.rocks/oxen-io/oxen-core/oxen-stable-ios-deps-LATEST.tar.xz
    ```
-   Or build the Oxen Dependencies and copy the Android deps into `oxen_coin/ios/External/android/oxen`
+   Or build the Graft Dependencies and copy the Android deps into `oxen_coin/ios/External/android/oxen`
    and the ios into `oxen_coin/ios/External/ios/oxen`
 
 4. Generate Launcher Icons
