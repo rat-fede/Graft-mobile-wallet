@@ -1,6 +1,6 @@
-# Oxen Wallet
+# Graft Wallet
 
-The Oxen Wallet is a Fork of the Cake Wallet.
+The Graft Wallet is a Fork of the Cake/Oxen Wallet.
 
 ## Build
 
