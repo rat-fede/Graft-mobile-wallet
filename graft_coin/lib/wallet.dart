@@ -5,43 +5,43 @@ import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_coin/src/exceptions/setup_wallet_exception.dart';
-import 'package:oxen_coin/src/native/wallet.dart' as oxen_wallet;
-import 'package:oxen_coin/src/util/convert_utf8_to_string.dart';
+import 'package:graft_coin/src/exceptions/setup_wallet_exception.dart';
+import 'package:graft_coin/src/native/wallet.dart' as graft_wallet;
+import 'package:graft_coin/src/util/convert_utf8_to_string.dart';
 
 int _boolToInt(bool value) => value ? 1 : 0;
 
 final statusSyncChannel =
-    BasicMessageChannel<ByteData>('oxen_coin.sync_listener', BinaryCodec());
+    BasicMessageChannel<ByteData>('graft_coin.sync_listener', BinaryCodec());
 
-final oxenMethodChannel = MethodChannel('oxen_coin');
+final graftMethodChannel = MethodChannel('graft_coin');
 
-int getSyncingHeight() => oxen_wallet.getSyncingHeightNative();
+int getSyncingHeight() => graft_wallet.getSyncingHeightNative();
 
-bool isNeededToRefresh() => oxen_wallet.isNeededToRefreshNative() != 0;
+bool isNeededToRefresh() => graft_wallet.isNeededToRefreshNative() != 0;
 
-bool isNewTransactionExist() => oxen_wallet.isNewTransactionExistNative() != 0;
+bool isNewTransactionExist() => graft_wallet.isNewTransactionExistNative() != 0;
 
 String getFilename() =>
-    convertUTF8ToString(pointer: oxen_wallet.getFileNameNative());
+    convertUTF8ToString(pointer: graft_wallet.getFileNameNative());
 
-String getSeed() => convertUTF8ToString(pointer: oxen_wallet.getSeedNative());
+String getSeed() => convertUTF8ToString(pointer: graft_wallet.getSeedNative());
 
 String getAddress({int accountIndex = 0, int addressIndex = 0}) =>
     convertUTF8ToString(
-        pointer: oxen_wallet.getAddressNative(accountIndex, addressIndex));
+        pointer: graft_wallet.getAddressNative(accountIndex, addressIndex));
 
 int getFullBalance({int accountIndex = 0}) =>
-    oxen_wallet.getFullBalanceNative(accountIndex);
+    graft_wallet.getFullBalanceNative(accountIndex);
 
 int getUnlockedBalance({int accountIndex = 0}) =>
-    oxen_wallet.getUnlockedBalanceNative(accountIndex);
+    graft_wallet.getUnlockedBalanceNative(accountIndex);
 
-int getCurrentHeight() => oxen_wallet.getCurrentHeightNative();
+int getCurrentHeight() => graft_wallet.getCurrentHeightNative();
 
-int getNodeHeightSync() => oxen_wallet.getNodeHeightNative();
+int getNodeHeightSync() => graft_wallet.getNodeHeightNative();
 
-bool isConnectedSync() => oxen_wallet.isConnectedNative() != 0;
+bool isConnectedSync() => graft_wallet.isConnectedNative() != 0;
 
 bool setupNodeSync(
     {String address,
@@ -62,7 +62,7 @@ bool setupNodeSync(
   }
 
   final errorMessagePointer = allocate<Utf8>();
-  final isSetupNode = oxen_wallet.setupNodeNative(
+  final isSetupNode = graft_wallet.setupNodeNative(
           addressPointer,
           loginPointer,
           passwordPointer,
@@ -83,29 +83,29 @@ bool setupNodeSync(
   return isSetupNode;
 }
 
-void startRefreshSync() => oxen_wallet.startRefreshNative();
+void startRefreshSync() => graft_wallet.startRefreshNative();
 
-Future<bool> connectToNode() async => oxen_wallet.connecToNodeNative() != 0;
+Future<bool> connectToNode() async => graft_wallet.connecToNodeNative() != 0;
 
 void setRefreshFromBlockHeight({int height}) =>
-    oxen_wallet.setRefreshFromBlockHeightNative(height);
+    graft_wallet.setRefreshFromBlockHeightNative(height);
 
 void setRecoveringFromSeed({bool isRecovery}) =>
-    oxen_wallet.setRecoveringFromSeedNative(_boolToInt(isRecovery));
+    graft_wallet.setRecoveringFromSeedNative(_boolToInt(isRecovery));
 
-void closeCurrentWallet() => oxen_wallet.closeCurrentWalletNative();
+void closeCurrentWallet() => graft_wallet.closeCurrentWalletNative();
 
 String getSecretViewKey() =>
-    convertUTF8ToString(pointer: oxen_wallet.getSecretViewKeyNative());
+    convertUTF8ToString(pointer: graft_wallet.getSecretViewKeyNative());
 
 String getPublicViewKey() =>
-    convertUTF8ToString(pointer: oxen_wallet.getPublicViewKeyNative());
+    convertUTF8ToString(pointer: graft_wallet.getPublicViewKeyNative());
 
 String getSecretSpendKey() =>
-    convertUTF8ToString(pointer: oxen_wallet.getSecretSpendKeyNative());
+    convertUTF8ToString(pointer: graft_wallet.getSecretSpendKeyNative());
 
 String getPublicSpendKey() =>
-    convertUTF8ToString(pointer: oxen_wallet.getPublicSpendKeyNative());
+    convertUTF8ToString(pointer: graft_wallet.getPublicSpendKeyNative());
 
 class SyncListener {
   SyncListener(this.onNewBlock, this.onNewTransaction) {
@@ -177,13 +177,13 @@ class SyncListener {
 SyncListener setListeners(void Function(int, int, double) onNewBlock,
     void Function() onNewTransaction) {
   final listener = SyncListener(onNewBlock, onNewTransaction);
-  oxen_wallet.setListenerNative();
+  graft_wallet.setListenerNative();
   return listener;
 }
 
-void onStartup() => oxen_wallet.onStartupNative();
+void onStartup() => graft_wallet.onStartupNative();
 
-void _storeSync(Object _) => oxen_wallet.storeSync();
+void _storeSync(Object _) => graft_wallet.storeSync();
 
 bool _setupNodeSync(Map args) {
   final address = args['address'] as String;
@@ -226,4 +226,4 @@ Future<bool> isConnected() => compute(_isConnected, 0);
 
 Future<int> getNodeHeight() => compute(_getNodeHeight, 0);
 
-void rescanBlockchainAsync() => oxen_wallet.rescanBlockchainAsyncNative();
+void rescanBlockchainAsync() => graft_wallet.rescanBlockchainAsyncNative();

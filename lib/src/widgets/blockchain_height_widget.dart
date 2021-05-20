@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/wallet/oxen/get_height_by_date.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/wallet/graft/get_height_by_date.dart';
+import 'package:graft_wallet/palette.dart';
 
 class BlockchainHeightWidget extends StatefulWidget {
   BlockchainHeightWidget({GlobalKey key}) : super(key: key);
@@ -46,7 +46,7 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
                     hintText: S.of(context).widgets_restore_from_blockheight,
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                            color: OxenPalette.teal, width: 2.0)),
+                            color: graftPalette.teal, width: 2.0)),
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: Theme.of(context).focusColor, width: 1.0))),
@@ -79,7 +79,7 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
                         hintText: S.of(context).widgets_restore_from_date,
                         focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                                color: OxenPalette.teal,
+                                color: graftPalette.teal,
                                 width: 2.0)),
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(

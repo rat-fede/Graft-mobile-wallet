@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
-import 'package:oxen_wallet/src/node/digest_request.dart';
+import 'package:graft_wallet/src/node/digest_request.dart';
 
 part 'node.g.dart';
 

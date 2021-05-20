@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/src/domain/services/user_service.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/stores/auth/auth_state.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/services/user_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/stores/auth/auth_state.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 part 'auth_store.g.dart';
 

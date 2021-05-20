@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
 
 class DangerzonePage extends BasePage {
   DangerzonePage({this.nextPage});
@@ -31,7 +31,7 @@ class DangerzonePage extends BasePage {
               Padding(
                 padding: EdgeInsets.all(20),
                 child: Icon(Icons.warning_amber_sharp,
-                    size: 125, color: OxenPalette.red),
+                    size: 125, color: graftPalette.red),
               ),
               Padding(
                 padding: EdgeInsets.all(10),

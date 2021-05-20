@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
 
 class WelcomePage extends BasePage {
   static const _baseWidth = 411.43;
@@ -28,7 +28,7 @@ class WelcomePage extends BasePage {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.all(20),
-                child: Image.asset('assets/images/oxen.png', height: 124, width: 400),
+                child: Image.asset('assets/images/graft.png', height: 124, width: 400),
               ),
               Padding(
                 padding: EdgeInsets.all(10),

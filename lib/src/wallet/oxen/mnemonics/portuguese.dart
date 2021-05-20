@@ -1137,7 +1137,7 @@ class PortugueseMnemonics {
     'ovoviviparo',
     'ovulo',
     'oxala',
-    'oxente',
+    'graftte',
     'oxiuro',
     'oxossi',
     'ozonizar',

@@ -1,12 +1,12 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_list_service.dart';
-import 'package:oxen_wallet/src/wallet/mnemotic_item.dart';
-import 'package:oxen_wallet/src/stores/wallet_restoration/wallet_restoration_state.dart';
-import 'package:oxen_wallet/src/stores/authentication/authentication_store.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/services/wallet_list_service.dart';
+import 'package:graft_wallet/src/wallet/mnemotic_item.dart';
+import 'package:graft_wallet/src/stores/wallet_restoration/wallet_restoration_state.dart';
+import 'package:graft_wallet/src/stores/authentication/authentication_store.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 part 'wallet_restoration_store.g.dart';
 
@@ -117,7 +117,7 @@ abstract class WalletRestorationStoreBase with Store {
   }
 
   void validateAddress(String value, {CryptoCurrency cryptoCurrency}) {
-    // OXEN (95, 106), XMR (95, 106), ADA (59, 92, 105), BCH (42), BNB (42),
+    // graft (95, 106), XMR (95, 106), ADA (59, 92, 105), BCH (42), BNB (42),
     // BTC (34, 42), DASH (34), EOS (42), ETH (42), LTC (34), NANO (64, 65),
     // TRX (34), USDT (42), XLM (56), XRP (34)
     const pattern = '^[0-9a-zA-Z]{95}\$|^[0-9a-zA-Z]{34}\$|^[0-9a-zA-Z]{42}\$|^[0-9a-zA-Z]{56}\$|^[0-9a-zA-Z]{59}\$|^[0-9a-zA-Z_]{64}\$|^[0-9a-zA-Z_]{65}\$|^[0-9a-zA-Z]{92}\$|^[0-9a-zA-Z]{105}\$|^[0-9a-zA-Z]{106}\$';
@@ -126,7 +126,7 @@ abstract class WalletRestorationStoreBase with Store {
     if (isValid && cryptoCurrency != null) {
       switch (cryptoCurrency) {
         case CryptoCurrency.xmr:
-        case CryptoCurrency.oxen:
+        case CryptoCurrency.graft:
           isValid = (value.length == 95)||(value.length == 106);
           break;
         case CryptoCurrency.bch:

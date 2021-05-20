@@ -1,16 +1,16 @@
 import 'dart:async';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_amount_format.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_balance.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_balance.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter/foundation.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/balance.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/domain/common/calculate_fiat_amount.dart';
-import 'package:oxen_wallet/src/stores/price/price_store.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/start_updating_price.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/balance.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/domain/common/calculate_fiat_amount.dart';
+import 'package:graft_wallet/src/stores/price/price_store.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/start_updating_price.dart';
 
 part 'balance_store.g.dart';
 
@@ -47,19 +47,19 @@ abstract class BalanceStoreBase with Store {
   @computed
   String get fullBalanceString {
     if (fullBalance == null) {
-      return oxenAmountToString(0, detail: _settingsStore.balanceDetail);
+      return graftAmountToString(0, detail: _settingsStore.balanceDetail);
     }
 
-    return oxenAmountToString(fullBalance, detail: _settingsStore.balanceDetail);
+    return graftAmountToString(fullBalance, detail: _settingsStore.balanceDetail);
   }
 
   @computed
   String get unlockedBalanceString {
     if (unlockedBalance == null) {
-      return oxenAmountToString(0, detail: _settingsStore.balanceDetail);
+      return graftAmountToString(0, detail: _settingsStore.balanceDetail);
     }
 
-    return oxenAmountToString(unlockedBalance, detail: _settingsStore.balanceDetail);
+    return graftAmountToString(unlockedBalance, detail: _settingsStore.balanceDetail);
   }
 
   @computed
@@ -69,7 +69,7 @@ abstract class BalanceStoreBase with Store {
     }
 
     final symbol = PriceStoreBase.generateSymbolForPair(
-        fiat: _settingsStore.fiatCurrency, crypto: CryptoCurrency.oxen);
+        fiat: _settingsStore.fiatCurrency, crypto: CryptoCurrency.graft);
     final price = _priceStore.prices[symbol];
     return calculateFiatAmount(price: price, cryptoAmount: fullBalance);
   }
@@ -81,7 +81,7 @@ abstract class BalanceStoreBase with Store {
     }
 
     final symbol = PriceStoreBase.generateSymbolForPair(
-        fiat: _settingsStore.fiatCurrency, crypto: CryptoCurrency.oxen);
+        fiat: _settingsStore.fiatCurrency, crypto: CryptoCurrency.graft);
     final price = _priceStore.prices[symbol];
     return calculateFiatAmount(price: price, cryptoAmount: unlockedBalance);
   }
@@ -107,7 +107,7 @@ abstract class BalanceStoreBase with Store {
 //  }
 
   Future _onBalanceChange(Balance balance) async {
-    final _balance = balance as OxenBalance;
+    final _balance = balance as graftBalance;
 
     if (fullBalance != _balance.fullBalance) {
       fullBalance = _balance.fullBalance;

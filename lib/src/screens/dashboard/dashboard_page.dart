@@ -2,23 +2,23 @@ import 'package:date_range_picker/date_range_picker.dart' as date_rage_picker;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/domain/common/balance_display_mode.dart';
-import 'package:oxen_wallet/src/node/sync_status.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/screens/dashboard/date_section_row.dart';
-import 'package:oxen_wallet/src/screens/dashboard/transaction_row.dart';
-import 'package:oxen_wallet/src/screens/dashboard/wallet_menu.dart';
-import 'package:oxen_wallet/src/stores/action_list/action_list_store.dart';
-import 'package:oxen_wallet/src/stores/action_list/date_section_item.dart';
-import 'package:oxen_wallet/src/stores/action_list/transaction_list_item.dart';
-import 'package:oxen_wallet/src/stores/balance/balance_store.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/stores/sync/sync_store.dart';
-import 'package:oxen_wallet/src/stores/wallet/wallet_store.dart';
-import 'package:oxen_wallet/src/widgets/picker.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/domain/common/balance_display_mode.dart';
+import 'package:graft_wallet/src/node/sync_status.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/screens/dashboard/date_section_row.dart';
+import 'package:graft_wallet/src/screens/dashboard/transaction_row.dart';
+import 'package:graft_wallet/src/screens/dashboard/wallet_menu.dart';
+import 'package:graft_wallet/src/stores/action_list/action_list_store.dart';
+import 'package:graft_wallet/src/stores/action_list/date_section_item.dart';
+import 'package:graft_wallet/src/stores/action_list/transaction_list_item.dart';
+import 'package:graft_wallet/src/stores/balance/balance_store.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/stores/sync/sync_store.dart';
+import 'package:graft_wallet/src/stores/wallet/wallet_store.dart';
+import 'package:graft_wallet/src/widgets/picker.dart';
 import 'package:provider/provider.dart';
 
 class DashboardPage extends BasePage {
@@ -172,7 +172,7 @@ class DashboardPageBodyState extends State<DashboardPageBody> {
                                         backgroundColor: Palette.separator,
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                                OxenPalette.teal),
+                                                graftPalette.teal),
                                         value: progress,
                                       ),
                                     ),
@@ -182,8 +182,8 @@ class DashboardPageBodyState extends State<DashboardPageBody> {
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: isFailure
-                                                ? OxenPalette.red
-                                                : OxenPalette.teal)),
+                                                ? graftPalette.red
+                                                : graftPalette.teal)),
                                     Text(descriptionText,
                                         style: TextStyle(
                                             fontSize: 11,
@@ -219,7 +219,7 @@ class DashboardPageBodyState extends State<DashboardPageBody> {
 
                                       return Text(displayMode.toString(),
                                           style: TextStyle(
-                                              color: OxenPalette.teal,
+                                              color: graftPalette.teal,
                                               fontSize: 16));
                                     }),
                                 Observer(

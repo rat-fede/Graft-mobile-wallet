@@ -1,6 +1,6 @@
 {
-  "welcome" : "Willkommen\nim OXEN WALLET",
-  "first_wallet_text" : "Das tolle Wallet\nfür Oxen",
+  "welcome" : "Willkommen\nim graft WALLET",
+  "first_wallet_text" : "Das tolle Wallet\nfür graft",
   "please_make_selection" : "Bitte treffen Sie unten eine Auswahl zu\nErstellen oder Wiederherstellen Ihres Wallets.",
   "create_new" : "Neu erstellen",
   "restore_wallet" : "Wallet wiederherstellen",
@@ -30,9 +30,9 @@
   "wallet_menu" : "Wallet-Menü",
   "Blocks_remaining" : "{status} verbleibende Blöcke",
   "please_try_to_connect_to_another_node" : "Bitte versuchen Sie, eine Verbindung zu einem anderen Knoten herzustellen",
-  "oxen_hidden" : "OXEN versteckt",
-  "oxen_available_balance" : "OXEN verfügbares Guthaben",
-  "oxen_full_balance" : "OXEN volles Guthaben",
+  "graft_hidden" : "graft versteckt",
+  "graft_available_balance" : "graft verfügbares Guthaben",
+  "graft_full_balance" : "graft volles Guthaben",
   "send" : "Senden",
   "receive" : "Erhalten",
   "transactions" : "Transaktionen",
@@ -70,7 +70,7 @@
   "commit_transaction_amount_fee" : "Transaktion festschreiben\nMenge: {amount}\nGebühr: {fee}",
   "sending" : "Senden",
   "transaction_sent" : "Transaktion gesendet!",
-  "send_oxen" : "OXEN Senden",
+  "send_graft" : "graft Senden",
 
   "faq" : "FAQ",
   "changelog" : "Änderungsprotokoll",
@@ -115,7 +115,7 @@
   "restore_description_from_seed_keys" : "Stellen sie Ihr Wallet mit Seed / Schlüsseln, welche Sie an einem sicheren Ort aufbewahrt haben, wieder her",
   "restore_next" : "Weiter",
   "restore_title_from_backup" : "Aus einer Sicherungsdatei wiederherstellen",
-  "restore_description_from_backup" : "Sie können die gesamte Oxen Wallet-App aus ihrer Sicherungsdatei wiederherstellen.",
+  "restore_description_from_backup" : "Sie können die gesamte graft Wallet-App aus ihrer Sicherungsdatei wiederherstellen.",
   "restore_seed_keys_restore" : "Seed / Schlüssel wiederherstellen",
   "restore_title_from_seed" : "Aus Seed wiederherstellen",
   "restore_description_from_seed" : "Stellen Sie Ihr Wallet aus den 25 Wörtern wieder her oder 13-Wort-Kombinationscode",
@@ -148,9 +148,9 @@
   "seed_language_italian" : "Italienisch",
 
 
-  "send_title" : "Senden Sie Oxen",
+  "send_title" : "Senden Sie graft",
   "send_your_wallet" : "Dein Wallet",
-  "send_oxen_address" : "Oxen-Adresse",
+  "send_graft_address" : "graft-Adresse",
   "all" : "ALLE",
   "send_error_currency" : "Die Währung kann nur Zahlen enthalten",
   "send_estimated_fee" : "Geschätzte Gebühr:",
@@ -165,7 +165,7 @@
   "stake_more" : "Mehr staken",
   "nothing_staked" : "Noch nichts gestaked",
   "service_node_key": "Service Node Schlüssel",
-  "stake_oxen": "Oxen staken",
+  "stake_graft": "graft staken",
   "title_confirm_unlock_stake": "Stake entsperren",
   "body_confirm_unlock_stake": "Möchtest du wirkklich dein Stake von {serviceNodeKey} entsperren?",
   "unlock_stake_requested": "Stake Entsperrung angefragt",
@@ -231,7 +231,7 @@
   "transaction_details_recipient_address" : "Empfängeradresse",
 
 
-  "wallet_list_title" : "Oxen Wallet",
+  "wallet_list_title" : "graft Wallet",
   "wallet_list_create_new_wallet" : "Neues Wallet erstellen",
   "wallet_list_restore_wallet" : "Wallet wiederherstellen",
   "wallet_list_load_wallet" : "Wallet laden",
@@ -257,7 +257,7 @@
   "error_text_node_address" : "Bitte geben Sie eine iPv4-Adresse ein",
   "error_text_node_port" : "Der Knotenport kann nur Nummern zwischen 0 und 65535 enthalten",
   "error_text_payment_id" : "Die Zahlungs-ID kann nur 16 bis 64 hexadezimale Zeichen enthalten",
-  "error_text_oxen" : "Der OXEN-Wert kann das verfügbare Guthaben nicht überschreiten.\nDie Anzahl der Nachkommastellen muss kleiner oder gleich 12 sein",
+  "error_text_graft" : "Der graft-Wert kann das verfügbare Guthaben nicht überschreiten.\nDie Anzahl der Nachkommastellen muss kleiner oder gleich 12 sein",
   "error_text_fiat" : "Der Wert des Betrags darf den verfügbaren Kontostand nicht überschreiten.\nDie Anzahl der Nachkommastellen muss kleiner oder gleich 2 sein",
   "error_text_subaddress_name" : "Im Namen der Unteradresse könne die Symbole ` , ' \" nicht enthalten sein\nund muss zwischen 1 und 20 Zeichen lang sein",
   "error_text_amount" : "Betrag kann nur Zahlen enthalten",
@@ -302,12 +302,12 @@
   "biometric_auth_reason" : "Scannen Sie Ihren Fingerabdruck zur Authentifizierung",
   "version" : "Ausführung {currentVersion}",
 
-  "openalias_alert_title" : "OXEN-Empfänger erkannt",
+  "openalias_alert_title" : "graft-Empfänger erkannt",
   "openalias_alert_content" : "Sie senden Geld an\n{recipient_name}",
 
   "dangerzone": "Gefahrenzone",
   "yes_im_sure": "Ja, Ich bin mir sicher!",
-  "never_give_your": "Geben sie NIEMALS ihren Oxen wallet {item} weiter!",
-  "dangerzone_warning": "Geben sie NIEMALS ihren Oxen wallet {item} in einer andere software oder website außer den OFFIZIELLEN Oxen wallets aus dem {app_store}, der Oxen website, der dem Oxen GitHub.\nMöchtest du wirklich fortfahren?",
+  "never_give_your": "Geben sie NIEMALS ihren graft wallet {item} weiter!",
+  "dangerzone_warning": "Geben sie NIEMALS ihren graft wallet {item} in einer andere software oder website außer den OFFIZIELLEN graft wallets aus dem {app_store}, der graft website, der dem graft GitHub.\nMöchtest du wirklich fortfahren?",
   "keys_title": "Schlüssel"
 }

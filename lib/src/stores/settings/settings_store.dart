@@ -6,13 +6,13 @@ import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/src/domain/common/balance_display_mode.dart';
-import 'package:oxen_wallet/src/domain/common/default_settings_migration.dart';
-import 'package:oxen_wallet/src/domain/common/fiat_currency.dart';
-import 'package:oxen_wallet/src/domain/common/language.dart';
-import 'package:oxen_wallet/src/node/node.dart';
-import 'package:oxen_wallet/src/wallet/crypto_amount_format.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_priority.dart';
+import 'package:graft_wallet/src/domain/common/balance_display_mode.dart';
+import 'package:graft_wallet/src/domain/common/default_settings_migration.dart';
+import 'package:graft_wallet/src/domain/common/fiat_currency.dart';
+import 'package:graft_wallet/src/domain/common/language.dart';
+import 'package:graft_wallet/src/node/node.dart';
+import 'package:graft_wallet/src/wallet/crypto_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_priority.dart';
 import 'package:package_info/package_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,7 +25,7 @@ abstract class SettingsStoreBase with Store {
       {@required SharedPreferences sharedPreferences,
       @required Box<Node> nodes,
       @required FiatCurrency initialFiatCurrency,
-      @required OxenTransactionPriority initialTransactionPriority,
+      @required graftTransactionPriority initialTransactionPriority,
       @required BalanceDisplayMode initialBalanceDisplayMode,
       @required AmountDetail initialBalanceDetail,
       @required bool initialSaveRecipientAddress,
@@ -70,11 +70,11 @@ abstract class SettingsStoreBase with Store {
       {@required SharedPreferences sharedPreferences,
       @required Box<Node> nodes,
       @required FiatCurrency initialFiatCurrency,
-      @required OxenTransactionPriority initialTransactionPriority,
+      @required graftTransactionPriority initialTransactionPriority,
       @required BalanceDisplayMode initialBalanceDisplayMode}) async {
     final currentFiatCurrency = FiatCurrency(
         symbol: sharedPreferences.getString(currentFiatCurrencyKey));
-    final currentTransactionPriority = OxenTransactionPriority.deserialize(
+    final currentTransactionPriority = graftTransactionPriority.deserialize(
         raw: sharedPreferences.getInt(currentTransactionPriorityKey));
     final currentBalanceDisplayMode = BalanceDisplayMode.deserialize(
         raw: sharedPreferences.getInt(currentBalanceDisplayModeKey));
@@ -126,7 +126,7 @@ abstract class SettingsStoreBase with Store {
   FiatCurrency fiatCurrency;
 
   @observable
-  OxenTransactionPriority transactionPriority;
+  graftTransactionPriority transactionPriority;
 
   @observable
   BalanceDisplayMode balanceDisplayMode;
@@ -200,7 +200,7 @@ abstract class SettingsStoreBase with Store {
 
   @action
   Future setCurrentTransactionPriority(
-      {@required OxenTransactionPriority priority}) async {
+      {@required graftTransactionPriority priority}) async {
     transactionPriority = priority;
     await _sharedPreferences.setInt(
         currentTransactionPriorityKey, priority.serialize());

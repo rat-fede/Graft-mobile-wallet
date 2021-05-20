@@ -1,2 +1,2 @@
-@interface OxenWalletListener
+@interface graftWalletListener
 @end

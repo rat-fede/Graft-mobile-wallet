@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/address_book/address_book_store.dart';
-import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/address_book/address_book_store.dart';
+import 'package:graft_wallet/src/widgets/graft_dialog.dart';
 import 'package:provider/provider.dart';
 
 class AddressBookPage extends BasePage {
@@ -40,7 +40,7 @@ class AddressBookPage extends BasePage {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Icon(Icons.add, color: OxenPalette.teal, size: 22.0),
+            Icon(Icons.add, color: graftPalette.teal, size: 22.0),
             ButtonTheme(
               minWidth: 28.0,
               height: 28.0,
@@ -174,8 +174,8 @@ class AddressBookPage extends BasePage {
   Color _getCurrencyBackgroundColor(CryptoCurrency currency) {
     Color color;
     switch (currency) {
-      case CryptoCurrency.oxen:
-        color = OxenPalette.tealWithOpacity;
+      case CryptoCurrency.graft:
+        color = graftPalette.tealWithOpacity;
         break;
       case CryptoCurrency.ada:
         color = Colors.blue[200];
@@ -226,7 +226,7 @@ class AddressBookPage extends BasePage {
     Color color;
     switch (currency) {
       case CryptoCurrency.xmr:
-        color = OxenPalette.teal;
+        color = graftPalette.teal;
         break;
       case CryptoCurrency.ltc:
       case CryptoCurrency.ada:
@@ -241,7 +241,7 @@ class AddressBookPage extends BasePage {
 
   Future<bool> showAlertDialog(BuildContext context) async {
     var result = false;
-    await showConfirmOxenDialog(context, 'Remove contact',
+    await showConfirmgraftDialog(context, 'Remove contact',
         'Are you sure that you want to remove selected contact?',
         onDismiss: (context) => Navigator.pop(context, false),
         onConfirm: (context) {
@@ -255,7 +255,7 @@ class AddressBookPage extends BasePage {
   Future<bool> showNameAndAddressDialog(
       BuildContext context, String name, String address) async {
     var result = false;
-    await showSimpleOxenDialog(
+    await showSimplegraftDialog(
       context,
       name,
       address,

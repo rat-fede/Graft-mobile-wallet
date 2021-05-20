@@ -1,7 +1,7 @@
 [
   {
     "question" : "Was ist der Unterschied zwischen verfügbarem Guthaben und vollständigem Guthaben?",
-    "answer" : "Nachdem Sie eine Transaktion getätigt oder Oxen erhalten haben, muss die Transaktion noch bestätigt werden. In ungefähr 20 Minuten sollte Ihr \"verfügbares Guthaben\" aktualisiert werden!\nWenn Sie Oxen senden, verringert sich manchmal Ihr verfügbares Guthaben um mehr als den Betrag, den Sie gesendet haben. Dies ist normal und zum Schutz Ihrer Privatsphäre erforderlich. Ihr \"vollständiges Gleichgewicht\" sollte in 20 Minuten wieder normal sein.\n"
+    "answer" : "Nachdem Sie eine Transaktion getätigt oder graft erhalten haben, muss die Transaktion noch bestätigt werden. In ungefähr 20 Minuten sollte Ihr \"verfügbares Guthaben\" aktualisiert werden!\nWenn Sie graft senden, verringert sich manchmal Ihr verfügbares Guthaben um mehr als den Betrag, den Sie gesendet haben. Dies ist normal und zum Schutz Ihrer Privatsphäre erforderlich. Ihr \"vollständiges Gleichgewicht\" sollte in 20 Minuten wieder normal sein.\n"
   },
   {
     "question" : "Was bedeuten \"Seed\" und \"Schlüssel\"?",
@@ -17,11 +17,11 @@
   },
   {
     "question" : "Was kann ich tun, wenn ich meinen Seed verliere?",
-    "answer" : "Wenn Sie Ihren Seed vergessen haben, haben Sie ihn wahrscheinlich irgendwo aufgeschrieben. Bitte überprüfen Sie Ihre Notizen und schauen Sie sich auf Ihrem Computer um. Wenn Sie es nirgendwo finden, haben Sie möglicherweise Oxen Wallet gesichert (in diesem Fall können Sie es aus diesem Backup wiederherstellen.) Wenn keines von beidem der Fall ist, können wir leider nichts tun.\n"
+    "answer" : "Wenn Sie Ihren Seed vergessen haben, haben Sie ihn wahrscheinlich irgendwo aufgeschrieben. Bitte überprüfen Sie Ihre Notizen und schauen Sie sich auf Ihrem Computer um. Wenn Sie es nirgendwo finden, haben Sie möglicherweise graft Wallet gesichert (in diesem Fall können Sie es aus diesem Backup wiederherstellen.) Wenn keines von beidem der Fall ist, können wir leider nichts tun.\n"
   },
   {
     "question" : "Sammeln Sie Informationen zu mir oder meinem Wallet?",
-    "answer" : "Oxen Wallet sammelt oder zeichnet keine Informationen über Sie oder Ihr Wallet auf. Ihre Privatsphäre ist uns wichtig.\nIhre Privatsphäre kann aber duch die Verbindung zu einem bösarigem Knoten kompromitiert werden. Deshalb empfehlen wir, die Standart Knoten oder ihren eigenen zu verwenden. "
+    "answer" : "graft Wallet sammelt oder zeichnet keine Informationen über Sie oder Ihr Wallet auf. Ihre Privatsphäre ist uns wichtig.\nIhre Privatsphäre kann aber duch die Verbindung zu einem bösarigem Knoten kompromitiert werden. Deshalb empfehlen wir, die Standart Knoten oder ihren eigenen zu verwenden. "
   },
   {
     "question" : "Woher die Fiat-Daten?",
@@ -33,18 +33,18 @@
   },
   {
     "question" : "Was sind Subadressen und wie verwende ich sie?",
-    "answer" : "Eine Unteradresse ist im Grunde eine eindeutige Adresse, die Sie jederzeit generieren können. An sie gesendete Coins landen weiterhin in Ihrem Wallet, aber die Person, die die Coins sendet, kann Ihre Hauptadresse nicht ermitteln.\nSie können eine neue Unteradresse im Empfangsbildschirm erstellen, indem Sie auf das „+“ neben der Schaltfläche Unteradressen tippen. Geben Sie einen Namen für die Unteradresse ein und tippen Sie auf \"Hinzufügen\". Dann tippen Sie einfach auf den Namen der Subadresse, wenn Sie ihn verwenden möchten!\nWenn Sie paranoid sind, sollten Sie wahrscheinlich jedes Mal, wenn Sie Oxen erhalten, eine neue Unteradresse erstellen.\n"
+    "answer" : "Eine Unteradresse ist im Grunde eine eindeutige Adresse, die Sie jederzeit generieren können. An sie gesendete Coins landen weiterhin in Ihrem Wallet, aber die Person, die die Coins sendet, kann Ihre Hauptadresse nicht ermitteln.\nSie können eine neue Unteradresse im Empfangsbildschirm erstellen, indem Sie auf das „+“ neben der Schaltfläche Unteradressen tippen. Geben Sie einen Namen für die Unteradresse ein und tippen Sie auf \"Hinzufügen\". Dann tippen Sie einfach auf den Namen der Subadresse, wenn Sie ihn verwenden möchten!\nWenn Sie paranoid sind, sollten Sie wahrscheinlich jedes Mal, wenn Sie graft erhalten, eine neue Unteradresse erstellen.\n"
   },
   {
-    "question" : "Ich habe meine OXEN nicht erhalten! Was kann ich tun?",
-    "answer" : "Wenn Sie Ihr Oxen nicht erhalten haben, möchten Sie möglicherweise auf das Synchonisations Icon auf auf ihrem Dashboard (oben links) tippen und auf Reconnect (Neu verbinden) klicken. Wenn dies nicht funktioniert, gehen Sie in das Einstellungsmenü, tippen Sie auf das Feld \"Aktueller Knoten\" und wählen Sie einen Knoten mit einem grünen Punkt daneben aus.\n"
+    "question" : "Ich habe meine graft nicht erhalten! Was kann ich tun?",
+    "answer" : "Wenn Sie Ihr graft nicht erhalten haben, möchten Sie möglicherweise auf das Synchonisations Icon auf auf ihrem Dashboard (oben links) tippen und auf Reconnect (Neu verbinden) klicken. Wenn dies nicht funktioniert, gehen Sie in das Einstellungsmenü, tippen Sie auf das Feld \"Aktueller Knoten\" und wählen Sie einen Knoten mit einem grünen Punkt daneben aus.\n"
   },
   {
-    "question" : "Wie kontaktiere ich den Oxen Wallet-Support?",
-    "answer" : "Senden Sie eine E-Mail an team@oxen.io, schließen Sie sich dem Telegram unter @LokiCommunity an oder twittern Sie @Oxen_io!\n"
+    "question" : "Wie kontaktiere ich den graft Wallet-Support?",
+    "answer" : "Senden Sie eine E-Mail an team@graft.io, schließen Sie sich dem Telegram unter @LokiCommunity an oder twittern Sie @graft_io!\n"
   },
   {
-    "question" : "Macht mich der Besitz von Oxen zu einem Investor?",
-    "answer" : "Nein, macht es nicht. Es macht sie zu einer coolen Person mit Oxen.\n"
+    "question" : "Macht mich der Besitz von graft zu einem Investor?",
+    "answer" : "Nein, macht es nicht. Es macht sie zu einer coolen Person mit graft.\n"
   }
 ]

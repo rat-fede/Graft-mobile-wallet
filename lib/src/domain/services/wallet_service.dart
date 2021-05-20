@@ -1,12 +1,12 @@
-import 'package:oxen_wallet/src/node/node.dart';
-import 'package:oxen_wallet/src/node/sync_status.dart';
-import 'package:oxen_wallet/src/wallet/balance.dart';
-import 'package:oxen_wallet/src/wallet/transaction/pending_transaction.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_history.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/wallet_description.dart';
-import 'package:oxen_wallet/src/wallet/wallet_type.dart';
+import 'package:graft_wallet/src/node/node.dart';
+import 'package:graft_wallet/src/node/sync_status.dart';
+import 'package:graft_wallet/src/wallet/balance.dart';
+import 'package:graft_wallet/src/wallet/transaction/pending_transaction.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_history.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/wallet_description.dart';
+import 'package:graft_wallet/src/wallet/wallet_type.dart';
 import 'package:rxdart/rxdart.dart';
 
 class WalletService extends Wallet {

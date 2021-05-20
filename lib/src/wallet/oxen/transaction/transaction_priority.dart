@@ -1,20 +1,20 @@
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/enumerable_item.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/enumerable_item.dart';
 
-class OxenTransactionPriority extends EnumerableItem<int> with Serializable<int> {
-  const OxenTransactionPriority({String title, int raw})
+class graftTransactionPriority extends EnumerableItem<int> with Serializable<int> {
+  const graftTransactionPriority({String title, int raw})
       : super(title: title, raw: raw);
 
   static const all = [
-    OxenTransactionPriority.slow,
-    OxenTransactionPriority.blink
+    graftTransactionPriority.slow,
+    graftTransactionPriority.blink
   ];
 
-  static const slow = OxenTransactionPriority(title: 'Slow', raw: 1);
-  static const blink = OxenTransactionPriority(title: 'Blink', raw: 5);
+  static const slow = graftTransactionPriority(title: 'Slow', raw: 1);
+  static const blink = graftTransactionPriority(title: 'Blink', raw: 5);
   static const standard = blink;
 
-  static OxenTransactionPriority deserialize({int raw}) {
+  static graftTransactionPriority deserialize({int raw}) {
     switch (raw) {
       case 1:
         return slow;
@@ -28,9 +28,9 @@ class OxenTransactionPriority extends EnumerableItem<int> with Serializable<int>
   @override
   String toString() {
     switch (this) {
-      case OxenTransactionPriority.slow:
+      case graftTransactionPriority.slow:
         return S.current.transaction_priority_slow;
-      case OxenTransactionPriority.blink:
+      case graftTransactionPriority.blink:
         return S.current.transaction_priority_blink;
       default:
         return '';

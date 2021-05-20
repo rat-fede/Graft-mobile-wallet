@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/contact.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/address_book/address_book_store.dart';
-import 'package:oxen_wallet/src/widgets/address_text_field.dart';
-import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
-import 'package:oxen_wallet/src/widgets/oxen_text_field.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/contact.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/address_book/address_book_store.dart';
+import 'package:graft_wallet/src/widgets/address_text_field.dart';
+import 'package:graft_wallet/src/widgets/graft_dialog.dart';
+import 'package:graft_wallet/src/widgets/graft_text_field.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
 import 'package:provider/provider.dart';
 
 class ContactPage extends BasePage {
@@ -39,7 +39,7 @@ class ContactFormState extends State<ContactForm> {
   final _currencyTypeController = TextEditingController();
   final _addressController = TextEditingController();
 
-  CryptoCurrency _selectedCrypto = CryptoCurrency.oxen;
+  CryptoCurrency _selectedCrypto = CryptoCurrency.graft;
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class ContactFormState extends State<ContactForm> {
     await showDialog<void>(
         context: context,
         builder: (BuildContext context) {
-          return OxenDialog(
+          return graftDialog(
               body: Container(
             padding: EdgeInsets.all(30),
             child: Column(
@@ -139,7 +139,7 @@ class ContactFormState extends State<ContactForm> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              OxenTextField(
+              graftTextField(
                 hintText: S.of(context).contact_name,
                 controller: _contactNameController,
                 validator: (value) {
@@ -152,7 +152,7 @@ class ContactFormState extends State<ContactForm> {
                 child: InkWell(
                   onTap: () => _setCurrencyType(context),
                   child: IgnorePointer(
-                    child: OxenTextField(
+                    child: graftTextField(
                       controller: _currencyTypeController,
                     ),
                   ),

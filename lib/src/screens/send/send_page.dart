@@ -3,25 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/domain/common/balance_display_mode.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/node/sync_status.dart';
-import 'package:oxen_wallet/src/screens/auth/auth_page.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/balance/balance_store.dart';
-import 'package:oxen_wallet/src/stores/send/send_store.dart';
-import 'package:oxen_wallet/src/stores/send/sending_state.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/stores/sync/sync_store.dart';
-import 'package:oxen_wallet/src/stores/wallet/wallet_store.dart';
-import 'package:oxen_wallet/src/wallet/oxen/calculate_estimated_fee.dart';
-import 'package:oxen_wallet/src/widgets/address_text_field.dart';
-import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
-import 'package:oxen_wallet/src/widgets/slide_to_act.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/domain/common/balance_display_mode.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/node/sync_status.dart';
+import 'package:graft_wallet/src/screens/auth/auth_page.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/balance/balance_store.dart';
+import 'package:graft_wallet/src/stores/send/send_store.dart';
+import 'package:graft_wallet/src/stores/send/sending_state.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/stores/sync/sync_store.dart';
+import 'package:graft_wallet/src/stores/wallet/wallet_store.dart';
+import 'package:graft_wallet/src/wallet/graft/calculate_estimated_fee.dart';
+import 'package:graft_wallet/src/widgets/address_text_field.dart';
+import 'package:graft_wallet/src/widgets/graft_dialog.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/src/widgets/slide_to_act.dart';
 import 'package:provider/provider.dart';
 
 class SendPage extends BasePage {
@@ -73,7 +73,7 @@ class SendFormState extends State<SendForm> {
     if (isOpenAlias) {
       _addressController.text = sendStore.recordAddress;
 
-      await showSimpleOxenDialog(context, S.of(context).openalias_alert_title,
+      await showSimplegraftDialog(context, S.of(context).openalias_alert_title,
           S.of(context).openalias_alert_content(sendStore.recordName),
           onPressed: (_) => Navigator.of(context).pop());
     }
@@ -129,7 +129,7 @@ class SendFormState extends State<SendForm> {
                             children: <Widget>[
                               Text(S.of(context).send_your_wallet,
                                   style: TextStyle(
-                                      fontSize: 12, color: OxenPalette.teal)),
+                                      fontSize: 12, color: graftPalette.teal)),
                               Text(walletStore.name,
                                   style: TextStyle(
                                       fontSize: 18,
@@ -151,7 +151,7 @@ class SendFormState extends State<SendForm> {
                         return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text(S.current.oxen_available_balance,
+                              Text(S.current.graft_available_balance,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Theme.of(context)
@@ -181,7 +181,7 @@ class SendFormState extends State<SendForm> {
                   child: Column(children: <Widget>[
                     AddressTextField(
                       controller: _addressController,
-                      placeholder: S.of(context).send_oxen_address,
+                      placeholder: S.of(context).send_graft_address,
                       focusNode: _focusNodeAddress,
                       onURIScanned: (uri) {
                         var address = '';
@@ -203,7 +203,7 @@ class SendFormState extends State<SendForm> {
                       ],
                       validator: (value) {
                         sendStore.validateAddress(value,
-                            cryptoCurrency: CryptoCurrency.oxen);
+                            cryptoCurrency: CryptoCurrency.graft);
                         return sendStore.errorMessage;
                       },
                     ),
@@ -227,7 +227,7 @@ class SendFormState extends State<SendForm> {
                                 width: 75,
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 8, top: 12),
-                                    child: Text('OXEN:',
+                                    child: Text('graft:',
                                         style: TextStyle(
                                             fontSize: 18,
                                             color: Theme.of(context)
@@ -255,20 +255,20 @@ class SendFormState extends State<SendForm> {
                               hintText: '0.0000',
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.teal, width: 2.0)),
+                                      color: graftPalette.teal, width: 2.0)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Theme.of(context).focusColor,
                                       width: 1.0)),
                               errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.red, width: 1.0)),
+                                      color: graftPalette.red, width: 1.0)),
                               focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.red, width: 1.0)),
-                              errorStyle: TextStyle(color: OxenPalette.red)),
+                                      color: graftPalette.red, width: 1.0)),
+                              errorStyle: TextStyle(color: graftPalette.red)),
                           validator: (value) {
-                            sendStore.validateOXEN(
+                            sendStore.validategraft(
                                 value, balanceStore.unlockedBalance);
                             return sendStore.errorMessage;
                           }),
@@ -308,18 +308,18 @@ class SendFormState extends State<SendForm> {
                               hintText: '0.00',
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.teal, width: 2.0)),
+                                      color: graftPalette.teal, width: 2.0)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Theme.of(context).focusColor,
                                       width: 1.0)),
                               errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.red, width: 1.0)),
+                                      color: graftPalette.red, width: 1.0)),
                               focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: OxenPalette.red, width: 1.0)),
-                              errorStyle: TextStyle(color: OxenPalette.red))),
+                                      color: graftPalette.red, width: 1.0)),
+                              errorStyle: TextStyle(color: graftPalette.red))),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12.0, bottom: 10),
@@ -336,7 +336,7 @@ class SendFormState extends State<SendForm> {
                                     .backgroundColor,
                               )),
                           Text(
-                              '${calculateEstimatedFee(priority: settingsStore.transactionPriority)} OXEN',
+                              '${calculateEstimatedFee(priority: settingsStore.transactionPriority)} graft',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -372,7 +372,7 @@ class SendFormState extends State<SendForm> {
           return SlideToAct(
             text: S.of(context).send_title,
             outerColor: Theme.of(context).primaryTextTheme.subtitle2.color,
-            innerColor: OxenPalette.teal,
+            innerColor: graftPalette.teal,
             onFutureSubmit: syncStore.status is SyncedSyncStatus
                 ? () async {
                     if (_formKey.currentState.validate()) {
@@ -438,14 +438,14 @@ class SendFormState extends State<SendForm> {
     reaction((_) => sendStore.state, (SendingState state) {
       if (state is SendingFailed) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          showSimpleOxenDialog(context, S.of(context).error, state.error,
+          showSimplegraftDialog(context, S.of(context).error, state.error,
               onPressed: (_) => Navigator.of(context).pop());
         });
       }
 
       if (state is TransactionCreatedSuccessfully) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          showSimpleOxenDialog(
+          showSimplegraftDialog(
               context,
               S.of(context).confirm_sending,
               S.of(context).commit_transaction_amount_fee(
@@ -459,7 +459,7 @@ class SendFormState extends State<SendForm> {
 
       if (state is TransactionCommitted) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          showSimpleOxenDialog(
+          showSimplegraftDialog(
               context, S.of(context).sending, S.of(context).transaction_sent,
               onPressed: (_) {
             _addressController.text = '';

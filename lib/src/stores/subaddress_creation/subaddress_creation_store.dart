@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_wallet.dart';
-import 'package:oxen_wallet/src/wallet/oxen/subaddress_list.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/stores/subaddress_creation/subaddress_creation_state.dart';
-import 'package:oxen_wallet/src/wallet/oxen/account.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_wallet.dart';
+import 'package:graft_wallet/src/wallet/graft/subaddress_list.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/stores/subaddress_creation/subaddress_creation_state.dart';
+import 'package:graft_wallet/src/wallet/graft/account.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 part 'subaddress_creation_store.g.dart';
 
@@ -62,7 +62,7 @@ abstract class SubadrressCreationStoreBase with Store {
   }
 
   Future<void> _onWalletChanged(Wallet wallet) async {
-    if (wallet is OxenWallet) {
+    if (wallet is graftWallet) {
       _account = wallet.account;
       _subaddressList = wallet.getSubaddress();
 

@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftOxenCoinPlugin: NSObject, FlutterPlugin {
+public class SwiftgraftCoinPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "oxen_coin", binaryMessenger: registrar.messenger())
-        let instance = SwiftOxenCoinPlugin()
+        let channel = FlutterMethodChannel(name: "graft_coin", binaryMessenger: registrar.messenger())
+        let instance = SwiftgraftCoinPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 

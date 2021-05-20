@@ -1,4 +1,4 @@
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 abstract class SyncStatus {
   const SyncStatus();

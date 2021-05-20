@@ -1,32 +1,32 @@
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
-import 'package:oxen_coin/src/oxen_api.dart';
-import 'package:oxen_coin/src/util/convert_utf8_to_string.dart';
-import 'package:oxen_coin/src/util/signatures.dart';
-import 'package:oxen_coin/src/util/types.dart';
-import 'package:oxen_coin/src/exceptions/wallet_creation_exception.dart';
-import 'package:oxen_coin/src/exceptions/wallet_restore_from_keys_exception.dart';
-import 'package:oxen_coin/src/exceptions/wallet_restore_from_seed_exception.dart';
+import 'package:graft_coin/src/graft_api.dart';
+import 'package:graft_coin/src/util/convert_utf8_to_string.dart';
+import 'package:graft_coin/src/util/signatures.dart';
+import 'package:graft_coin/src/util/types.dart';
+import 'package:graft_coin/src/exceptions/wallet_creation_exception.dart';
+import 'package:graft_coin/src/exceptions/wallet_restore_from_keys_exception.dart';
+import 'package:graft_coin/src/exceptions/wallet_restore_from_seed_exception.dart';
 
-final createWalletNative = oxenApi
+final createWalletNative = graftApi
     .lookup<NativeFunction<create_wallet>>('create_wallet')
     .asFunction<CreateWallet>();
 
-final restoreWalletFromSeedNative = oxenApi
+final restoreWalletFromSeedNative = graftApi
     .lookup<NativeFunction<restore_wallet_from_seed>>(
         'restore_wallet_from_seed')
     .asFunction<RestoreWalletFromSeed>();
 
-final restoreWalletFromKeysNative = oxenApi
+final restoreWalletFromKeysNative = graftApi
     .lookup<NativeFunction<restore_wallet_from_keys>>(
         'restore_wallet_from_keys')
     .asFunction<RestoreWalletFromKeys>();
 
-final isWalletExistNative = oxenApi
+final isWalletExistNative = graftApi
     .lookup<NativeFunction<is_wallet_exist>>('is_wallet_exist')
     .asFunction<IsWalletExist>();
 
-final loadWalletNative = oxenApi
+final loadWalletNative = graftApi
     .lookup<NativeFunction<load_wallet>>('load_wallet')
     .asFunction<LoadWallet>();
 

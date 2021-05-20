@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/wallet/mnemotic_item.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/chinese_simplified.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/dutch.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/english.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/english_old.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/french.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/german.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/italian.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/japanese.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/portuguese.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/russian.dart';
-import 'package:oxen_wallet/src/wallet/oxen/mnemonics/spanish.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/wallet/mnemotic_item.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/chinese_simplified.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/dutch.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/english.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/english_old.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/french.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/german.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/italian.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/japanese.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/portuguese.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/russian.dart';
+import 'package:graft_wallet/src/wallet/graft/mnemonics/spanish.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
 
 final List<String> _englishWords =
     EnglishMnemonics.words + EnglishOldMnemonics.words;
@@ -260,7 +260,7 @@ class SeedWidgetState extends State<SeedWidget> {
                   child: Container(
                       decoration: BoxDecoration(
                           color:
-                              isValid ? Colors.transparent : OxenPalette.red),
+                              isValid ? Colors.transparent : graftPalette.red),
                       margin: EdgeInsets.only(right: 7, bottom: 8),
                       child: Text(
                         item.toString(),
@@ -330,7 +330,7 @@ class SeedWidgetState extends State<SeedWidget> {
                           errorText: _errorMessage,
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: OxenPalette.teal, width: 2.0)),
+                                  color: graftPalette.teal, width: 2.0)),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                   color: Theme.of(context).focusColor,

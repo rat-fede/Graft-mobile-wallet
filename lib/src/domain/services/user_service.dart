@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:oxen_wallet/src/domain/common/secret_store_key.dart';
-import 'package:oxen_wallet/src/domain/common/encrypt.dart';
+import 'package:graft_wallet/src/domain/common/secret_store_key.dart';
+import 'package:graft_wallet/src/domain/common/encrypt.dart';
 
 class UserService {
   UserService({this.sharedPreferences, this.secureStorage});

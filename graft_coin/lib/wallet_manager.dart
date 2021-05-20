@@ -1,6 +1,6 @@
 import 'package:ffi/ffi.dart';
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/src/native/wallet_manager.dart' as wallet_manager;
+import 'package:graft_coin/src/native/wallet_manager.dart' as wallet_manager;
 
 void loadWallet({String path, String password, int nettype = 0}) {
   final pathPointer = Utf8.toUtf8(path);

@@ -35,20 +35,20 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `WELCOME\nTO OXEN WALLET`
+  /// `WELCOME\nTO graft WALLET`
   String get welcome {
     return Intl.message(
-      'WELCOME\nTO OXEN WALLET',
+      'WELCOME\nTO graft WALLET',
       name: 'welcome',
       desc: '',
       args: [],
     );
   }
 
-  /// `Awesome wallet\nfor Oxen`
+  /// `Awesome wallet\nfor graft`
   String get first_wallet_text {
     return Intl.message(
-      'Awesome wallet\nfor Oxen',
+      'Awesome wallet\nfor graft',
       name: 'first_wallet_text',
       desc: '',
       args: [],
@@ -265,31 +265,31 @@ class S {
     );
   }
 
-  /// `OXEN Hidden`
-  String get oxen_hidden {
+  /// `graft Hidden`
+  String get graft_hidden {
     return Intl.message(
-      'OXEN Hidden',
-      name: 'oxen_hidden',
+      'graft Hidden',
+      name: 'graft_hidden',
       desc: '',
       args: [],
     );
   }
 
-  /// `OXEN Available Balance`
-  String get oxen_available_balance {
+  /// `graft Available Balance`
+  String get graft_available_balance {
     return Intl.message(
-      'OXEN Available Balance',
-      name: 'oxen_available_balance',
+      'graft Available Balance',
+      name: 'graft_available_balance',
       desc: '',
       args: [],
     );
   }
 
-  /// `OXEN Full Balance`
-  String get oxen_full_balance {
+  /// `graft Full Balance`
+  String get graft_full_balance {
     return Intl.message(
-      'OXEN Full Balance',
-      name: 'oxen_full_balance',
+      'graft Full Balance',
+      name: 'graft_full_balance',
       desc: '',
       args: [],
     );
@@ -625,11 +625,11 @@ class S {
     );
   }
 
-  /// `Send OXEN`
-  String get send_oxen {
+  /// `Send graft`
+  String get send_graft {
     return Intl.message(
-      'Send OXEN',
-      name: 'send_oxen',
+      'Send graft',
+      name: 'send_graft',
       desc: '',
       args: [],
     );
@@ -945,10 +945,10 @@ class S {
     );
   }
 
-  /// `You can restore the whole Oxen Wallet app from your back-up file`
+  /// `You can restore the whole graft Wallet app from your back-up file`
   String get restore_description_from_backup {
     return Intl.message(
-      'You can restore the whole Oxen Wallet app from your back-up file',
+      'You can restore the whole graft Wallet app from your back-up file',
       name: 'restore_description_from_backup',
       desc: '',
       args: [],
@@ -1215,10 +1215,10 @@ class S {
     );
   }
 
-  /// `Send Oxen`
+  /// `Send graft`
   String get send_title {
     return Intl.message(
-      'Send Oxen',
+      'Send graft',
       name: 'send_title',
       desc: '',
       args: [],
@@ -1235,11 +1235,11 @@ class S {
     );
   }
 
-  /// `Oxen address`
-  String get send_oxen_address {
+  /// `graft address`
+  String get send_graft_address {
     return Intl.message(
-      'Oxen address',
-      name: 'send_oxen_address',
+      'graft address',
+      name: 'send_graft_address',
       desc: '',
       args: [],
     );
@@ -1365,11 +1365,11 @@ class S {
     );
   }
 
-  /// `Stake Oxen`
-  String get stake_oxen {
+  /// `Stake graft`
+  String get stake_graft {
     return Intl.message(
-      'Stake Oxen',
-      name: 'stake_oxen',
+      'Stake graft',
+      name: 'stake_graft',
       desc: '',
       args: [],
     );
@@ -1875,10 +1875,10 @@ class S {
     );
   }
 
-  /// `Oxen Wallet`
+  /// `graft Wallet`
   String get wallet_list_title {
     return Intl.message(
-      'Oxen Wallet',
+      'graft Wallet',
       name: 'wallet_list_title',
       desc: '',
       args: [],
@@ -2075,11 +2075,11 @@ class S {
     );
   }
 
-  /// `OXEN value can't exceed available balance.\nThe number of fraction digits must be less or equal to 12`
-  String get error_text_oxen {
+  /// `graft value can't exceed available balance.\nThe number of fraction digits must be less or equal to 12`
+  String get error_text_graft {
     return Intl.message(
-      'OXEN value can\'t exceed available balance.\nThe number of fraction digits must be less or equal to 12',
-      name: 'error_text_oxen',
+      'graft value can\'t exceed available balance.\nThe number of fraction digits must be less or equal to 12',
+      name: 'error_text_graft',
       desc: '',
       args: [],
     );
@@ -2405,10 +2405,10 @@ class S {
     );
   }
 
-  /// `OXEN Recipient Detected`
+  /// `graft Recipient Detected`
   String get openalias_alert_title {
     return Intl.message(
-      'OXEN Recipient Detected',
+      'graft Recipient Detected',
       name: 'openalias_alert_title',
       desc: '',
       args: [],
@@ -2445,20 +2445,20 @@ class S {
     );
   }
 
-  /// `NEVER give your Oxen wallet {item} to ANYONE!`
+  /// `NEVER give your graft wallet {item} to ANYONE!`
   String never_give_your(Object item) {
     return Intl.message(
-      'NEVER give your Oxen wallet $item to ANYONE!',
+      'NEVER give your graft wallet $item to ANYONE!',
       name: 'never_give_your',
       desc: '',
       args: [item],
     );
   }
 
-  /// `NEVER input your Oxen wallet {item} into any software or website other than the OFFICIAL Oxen wallets downloaded directly from the {app_store}, the Oxen website, or the Oxen GitHub.\nAre you sure you want to access your wallet {item}?`
+  /// `NEVER input your graft wallet {item} into any software or website other than the OFFICIAL graft wallets downloaded directly from the {app_store}, the graft website, or the graft GitHub.\nAre you sure you want to access your wallet {item}?`
   String dangerzone_warning(Object item, Object app_store) {
     return Intl.message(
-      'NEVER input your Oxen wallet $item into any software or website other than the OFFICIAL Oxen wallets downloaded directly from the $app_store, the Oxen website, or the Oxen GitHub.\nAre you sure you want to access your wallet $item?',
+      'NEVER input your graft wallet $item into any software or website other than the OFFICIAL graft wallets downloaded directly from the $app_store, the graft website, or the graft GitHub.\nAre you sure you want to access your wallet $item?',
       name: 'dangerzone_warning',
       desc: '',
       args: [item, app_store],

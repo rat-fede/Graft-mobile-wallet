@@ -4,116 +4,116 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_coin/src/exceptions/setup_wallet_exception.dart';
-import 'package:oxen_coin/src/oxen_api.dart';
-import 'package:oxen_coin/src/util/convert_utf8_to_string.dart';
-import 'package:oxen_coin/src/util/signatures.dart';
-import 'package:oxen_coin/src/util/types.dart';
+import 'package:graft_coin/src/exceptions/setup_wallet_exception.dart';
+import 'package:graft_coin/src/graft_api.dart';
+import 'package:graft_coin/src/util/convert_utf8_to_string.dart';
+import 'package:graft_coin/src/util/signatures.dart';
+import 'package:graft_coin/src/util/types.dart';
 
 int _boolToInt(bool value) => value ? 1 : 0;
 
 final statusSyncChannel =
-    BasicMessageChannel<ByteData>('oxen_coin.sync_listener', BinaryCodec());
+    BasicMessageChannel<ByteData>('graft_coin.sync_listener', BinaryCodec());
 
-final oxenMethodChannel = MethodChannel('oxen_coin');
+final graftMethodChannel = MethodChannel('graft_coin');
 
-final getFileNameNative = oxenApi
+final getFileNameNative = graftApi
     .lookup<NativeFunction<get_filename>>('get_filename')
     .asFunction<GetFilename>();
 
 final getSeedNative =
-    oxenApi.lookup<NativeFunction<get_seed>>('seed').asFunction<GetSeed>();
+    graftApi.lookup<NativeFunction<get_seed>>('seed').asFunction<GetSeed>();
 
-final getAddressNative = oxenApi
+final getAddressNative = graftApi
     .lookup<NativeFunction<get_address>>('get_address')
     .asFunction<GetAddress>();
 
-final getFullBalanceNative = oxenApi
+final getFullBalanceNative = graftApi
     .lookup<NativeFunction<get_full_balanace>>('get_full_balance')
     .asFunction<GetFullBalance>();
 
-final getUnlockedBalanceNative = oxenApi
+final getUnlockedBalanceNative = graftApi
     .lookup<NativeFunction<get_unlocked_balanace>>('get_unlocked_balance')
     .asFunction<GetUnlockedBalance>();
 
-final getCurrentHeightNative = oxenApi
+final getCurrentHeightNative = graftApi
     .lookup<NativeFunction<get_current_height>>('get_current_height')
     .asFunction<GetCurrentHeight>();
 
-final getNodeHeightNative = oxenApi
+final getNodeHeightNative = graftApi
     .lookup<NativeFunction<get_node_height>>('get_node_height')
     .asFunction<GetNodeHeight>();
 
-final isConnectedNative = oxenApi
+final isConnectedNative = graftApi
     .lookup<NativeFunction<is_connected>>('is_connected')
     .asFunction<IsConnected>();
 
-final setupNodeNative = oxenApi
+final setupNodeNative = graftApi
     .lookup<NativeFunction<setup_node>>('setup_node')
     .asFunction<SetupNode>();
 
-final startRefreshNative = oxenApi
+final startRefreshNative = graftApi
     .lookup<NativeFunction<start_refresh>>('start_refresh')
     .asFunction<StartRefresh>();
 
-final connecToNodeNative = oxenApi
+final connecToNodeNative = graftApi
     .lookup<NativeFunction<connect_to_node>>('connect_to_node')
     .asFunction<ConnectToNode>();
 
-final setRefreshFromBlockHeightNative = oxenApi
+final setRefreshFromBlockHeightNative = graftApi
     .lookup<NativeFunction<set_refresh_from_block_height>>(
         'set_refresh_from_block_height')
     .asFunction<SetRefreshFromBlockHeight>();
 
-final setRecoveringFromSeedNative = oxenApi
+final setRecoveringFromSeedNative = graftApi
     .lookup<NativeFunction<set_recovering_from_seed>>(
         'set_recovering_from_seed')
     .asFunction<SetRecoveringFromSeed>();
 
 final storeNative =
-    oxenApi.lookup<NativeFunction<store_c>>('store').asFunction<Store>();
+    graftApi.lookup<NativeFunction<store_c>>('store').asFunction<Store>();
 
 final setListenerNative =
-    oxenApi.lookupFunction<Void Function(), void Function()>('set_listener');
+    graftApi.lookupFunction<Void Function(), void Function()>('set_listener');
 
-final getSyncingHeightNative = oxenApi
+final getSyncingHeightNative = graftApi
     .lookup<NativeFunction<get_syncing_height>>('get_syncing_height')
     .asFunction<GetSyncingHeight>();
 
-final isNeededToRefreshNative = oxenApi
+final isNeededToRefreshNative = graftApi
     .lookup<NativeFunction<is_needed_to_refresh>>('is_needed_to_refresh')
     .asFunction<IsNeededToRefresh>();
 
-final isNewTransactionExistNative = oxenApi
+final isNewTransactionExistNative = graftApi
     .lookup<NativeFunction<is_new_transaction_exist>>(
         'is_new_transaction_exist')
     .asFunction<IsNewTransactionExist>();
 
-final getSecretViewKeyNative = oxenApi
+final getSecretViewKeyNative = graftApi
     .lookup<NativeFunction<secret_view_key>>('secret_view_key')
     .asFunction<SecretViewKey>();
 
-final getPublicViewKeyNative = oxenApi
+final getPublicViewKeyNative = graftApi
     .lookup<NativeFunction<public_view_key>>('public_view_key')
     .asFunction<PublicViewKey>();
 
-final getSecretSpendKeyNative = oxenApi
+final getSecretSpendKeyNative = graftApi
     .lookup<NativeFunction<secret_spend_key>>('secret_spend_key')
     .asFunction<SecretSpendKey>();
 
-final getPublicSpendKeyNative = oxenApi
+final getPublicSpendKeyNative = graftApi
     .lookup<NativeFunction<secret_view_key>>('public_spend_key')
     .asFunction<PublicSpendKey>();
 
-final closeCurrentWalletNative = oxenApi
+final closeCurrentWalletNative = graftApi
     .lookup<NativeFunction<close_current_wallet>>('close_current_wallet')
     .asFunction<CloseCurrentWallet>();
 
-final onStartupNative = oxenApi
+final onStartupNative = graftApi
     .lookup<NativeFunction<on_startup>>('on_startup')
     .asFunction<OnStartup>();
 
-final rescanBlockchainAsyncNative = oxenApi
+final rescanBlockchainAsyncNative = graftApi
     .lookup<NativeFunction<rescan_blockchain>>('rescan_blockchain')
     .asFunction<RescanBlockchainAsync>();
 

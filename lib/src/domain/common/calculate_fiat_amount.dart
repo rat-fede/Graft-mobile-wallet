@@ -1,10 +1,10 @@
-import 'package:oxen_wallet/src/wallet/oxen/oxen_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_amount_format.dart';
 
 String calculateFiatAmount({double price, int cryptoAmount}) {
   if (price == null || cryptoAmount == null) {
     return '0.00';
   }
-  final result = price * oxenAmountToDouble(cryptoAmount);
+  final result = price * graftAmountToDouble(cryptoAmount);
 
   if (result == 0.0) {
     return '0.00';

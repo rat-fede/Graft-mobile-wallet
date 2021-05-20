@@ -2,12 +2,12 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_info.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/screens/transaction_details/standart_list_item.dart';
-import 'package:oxen_wallet/src/screens/transaction_details/standart_list_row.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_info.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/screens/transaction_details/standart_list_item.dart';
+import 'package:graft_wallet/src/screens/transaction_details/standart_list_row.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
 
 class TransactionDetailsPage extends BasePage {
   TransactionDetailsPage({this.transactionInfo});

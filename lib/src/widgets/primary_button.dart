@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton(

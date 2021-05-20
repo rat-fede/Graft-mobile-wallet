@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/enumerable_item.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/enumerable_item.dart';
 
 class BalanceDisplayMode extends EnumerableItem<int> with Serializable<int> {
   const BalanceDisplayMode({@required String title, @required int raw})
@@ -34,11 +34,11 @@ class BalanceDisplayMode extends EnumerableItem<int> with Serializable<int> {
   String toString() {
     switch (this) {
       case BalanceDisplayMode.fullBalance:
-        return S.current.oxen_full_balance;
+        return S.current.graft_full_balance;
       case BalanceDisplayMode.availableBalance:
-        return S.current.oxen_available_balance;
+        return S.current.graft_available_balance;
       case BalanceDisplayMode.hiddenBalance:
-        return S.current.oxen_hidden;
+        return S.current.graft_hidden;
       default:
         return '';
     }

@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/src/native/account_list.dart' as account_list;
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/src/native/account_list.dart' as account_list;
 
 void refreshAccounts() => account_list.accountRefreshNative();
 

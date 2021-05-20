@@ -1,11 +1,11 @@
-# Oxen Mobile Wallet Privacy Policy
+# graft Mobile Wallet Privacy Policy
 ### Last Modified: 10 January 2021
 ### 1. Introduction
 
-This Privacy Policy explains how information about you is collected, used and disclosed by Oxen
+This Privacy Policy explains how information about you is collected, used and disclosed by graft
 ("we" or "us"). This Privacy Policy (together with our Terms of Service and any other documents
 referred to therein or herein) applies to information we collect when you use our mobile application
-(Oxen Mobile Wallet), or when you otherwise interact with us.
+(graft Mobile Wallet), or when you otherwise interact with us.
 
 We may change this Privacy Policy from time to time. If we make changes, we will notify you by
 revising the date at the top of the policy and, in some cases, we may provide you with additional
@@ -17,20 +17,20 @@ practices and the ways you can help protect your privacy.
 Information You Provide to Us
 - We collect information you provide directly to us.
 - For example, we could collect any information you willingly provide to use regarding use of the
-  Oxen Mobile Wallet for support or troubleshooting.
+  graft Mobile Wallet for support or troubleshooting.
 Information We Collect Automatically When You Use the Services
 - When you access or use our Services, Apple will automatically collect information about you, which
   we can view and access:
 Apple may collect IP address where you downloaded the app, your name, phone number Apple ID, etc.
 
-Oxen does not programmatically collect any data about your usage of the Oxen Mobile Wallet, we can
+graft does not programmatically collect any data about your usage of the graft Mobile Wallet, we can
 only view the statistics that Apple keeps.
 
 ### 3. Use of Information
 We may use information about you collected from third parties like Apple for various purposes,
 including to:
 - Provide, maintain and improve our Services;
-- Provide and deliver the services you request, facilitate Oxen transactions and send you related
+- Provide and deliver the services you request, facilitate graft transactions and send you related
   information, including confirmations;
 - Send you technical notices, updates, security alerts, authentication codes and support and
   administrative messages;
@@ -41,7 +41,7 @@ including to:
 
 ### 4. Sharing of Information
 We may share information about you as follows or as otherwise described in this Privacy Policy:
-- With the Oxen Network, the Oxen Mobile Wallet will share your public account address and any
+- With the graft Network, the graft Mobile Wallet will share your public account address and any
   transaction details to facilitate any transaction request you submit via the Services;
 - We may also share aggregated or de-identified information, which cannot reasonably be used to
   identify you.
@@ -51,4 +51,4 @@ We take reasonable measures to help protect information about you from loss, the
 unauthorized access, disclosure, alteration and destruction.
 
 ### 6. Contact Us
-If you have any questions about this Privacy Policy, please contact us at team@oxen.io
+If you have any questions about this Privacy Policy, please contact us at team@graft.io

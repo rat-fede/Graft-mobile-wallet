@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 
-class OxenTextField extends StatelessWidget {
-  OxenTextField(
+class graftTextField extends StatelessWidget {
+  graftTextField(
       {this.enabled = true,
       this.hintText,
       this.keyboardType,
@@ -43,15 +43,15 @@ class OxenTextField extends StatelessWidget {
                 TextStyle(fontSize: 18.0, color: Theme.of(context).hintColor),
             hintText: hintText,
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: OxenPalette.teal, width: 2.0)),
+                borderSide: BorderSide(color: graftPalette.teal, width: 2.0)),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                     color: Theme.of(context).focusColor, width: 1.0)),
             errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: OxenPalette.red, width: 1.0)),
+                borderSide: BorderSide(color: graftPalette.red, width: 1.0)),
             focusedErrorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: OxenPalette.red, width: 1.0)),
-            errorStyle: TextStyle(color: OxenPalette.red)),
+                borderSide: BorderSide(color: graftPalette.red, width: 1.0)),
+            errorStyle: TextStyle(color: graftPalette.red)),
         validator: validator);
   }
 }

@@ -1,28 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/domain/common/balance_display_mode.dart';
-import 'package:oxen_wallet/src/domain/common/fiat_currency.dart';
-import 'package:oxen_wallet/src/screens/auth/auth_page.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/screens/disclaimer/disclaimer_page.dart';
-import 'package:oxen_wallet/src/screens/settings/attributes.dart';
-import 'package:oxen_wallet/src/screens/settings/items/settings_item.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/domain/common/balance_display_mode.dart';
+import 'package:graft_wallet/src/domain/common/fiat_currency.dart';
+import 'package:graft_wallet/src/screens/auth/auth_page.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/screens/disclaimer/disclaimer_page.dart';
+import 'package:graft_wallet/src/screens/settings/attributes.dart';
+import 'package:graft_wallet/src/screens/settings/items/settings_item.dart';
 
 // Settings widgets
-import 'package:oxen_wallet/src/screens/settings/widgets/settings_link_list_row.dart';
-import 'package:oxen_wallet/src/screens/settings/widgets/settings_raw_widget_list_row.dart';
-import 'package:oxen_wallet/src/screens/settings/widgets/settings_switch_list_row.dart';
-import 'package:oxen_wallet/src/screens/settings/widgets/settings_text_list_row.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/wallet/crypto_amount_format.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_priority.dart';
-import 'package:oxen_wallet/src/widgets/nav/nav_list_arrow.dart';
-import 'package:oxen_wallet/src/widgets/nav/nav_list_header.dart';
-import 'package:oxen_wallet/src/widgets/present_picker.dart';
+import 'package:graft_wallet/src/screens/settings/widgets/settings_link_list_row.dart';
+import 'package:graft_wallet/src/screens/settings/widgets/settings_raw_widget_list_row.dart';
+import 'package:graft_wallet/src/screens/settings/widgets/settings_switch_list_row.dart';
+import 'package:graft_wallet/src/screens/settings/widgets/settings_text_list_row.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/wallet/crypto_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_priority.dart';
+import 'package:graft_wallet/src/widgets/nav/nav_list_arrow.dart';
+import 'package:graft_wallet/src/widgets/nav/nav_list_header.dart';
+import 'package:graft_wallet/src/widgets/present_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -51,15 +51,15 @@ class SettingsFormState extends State<SettingsForm> {
   final _telegramImage = Image.asset('assets/images/Telegram.png');
   final _twitterImage = Image.asset('assets/images/Twitter.png');
 
-  final _emailText = 'team@oxen.io';
-  final _telegramText = 't.me/Oxen_Community';
-  final _twitterText = 'twitter.com/Oxen_io';
-  final _githubText = 'github.com/oxen-io';
+  final _emailText = 'team@graft.io';
+  final _telegramText = 't.me/graft_Community';
+  final _twitterText = 'twitter.com/graft_io';
+  final _githubText = 'github.com/graft-io';
 
-  final _emailUrl = 'mailto:team@oxen.io';
-  final _telegramUrl = 'https:t.me/Oxen_Community';
-  final _twitterUrl = 'https:twitter.com/Oxen_io';
-  final _githubUrl = 'https:github.com/oxen-io';
+  final _emailUrl = 'mailto:team@graft.io';
+  final _telegramUrl = 'https:t.me/graft_Community';
+  final _twitterUrl = 'https:twitter.com/graft_io';
+  final _githubUrl = 'https:github.com/graft-io';
 
   final _items = <SettingsItem>[];
 
@@ -344,7 +344,7 @@ class SettingsFormState extends State<SettingsForm> {
   Future<void> _setTransactionPriority(BuildContext context) async {
     final settingsStore = context.read<SettingsStore>();
     final selectedPriority =
-        await presentPicker(context, OxenTransactionPriority.all);
+        await presentPicker(context, graftTransactionPriority.all);
 
     if (selectedPriority != null) {
       await settingsStore.setCurrentTransactionPriority(

@@ -1,5 +1,5 @@
 import 'package:rxdart/rxdart.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_info.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_info.dart';
 
 abstract class TransactionHistory {
   Observable<List<TransactionInfo>> transactions;

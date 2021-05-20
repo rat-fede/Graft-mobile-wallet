@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/src/native/subaddress_list.dart' as subaddress_list;
-import 'package:oxen_coin/oxen_coin_structs.dart';
+import 'package:graft_coin/src/native/subaddress_list.dart' as subaddress_list;
+import 'package:graft_coin/graft_coin_structs.dart';
 
 void refreshSubaddresses({int accountIndex}) =>
     subaddress_list.subaddressRefreshNative(accountIndex);

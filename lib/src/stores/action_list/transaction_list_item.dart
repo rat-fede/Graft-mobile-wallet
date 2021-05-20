@@ -1,5 +1,5 @@
-import 'package:oxen_wallet/src/wallet/transaction/transaction_info.dart';
-import 'package:oxen_wallet/src/stores/action_list/action_list_item.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_info.dart';
+import 'package:graft_wallet/src/stores/action_list/action_list_item.dart';
 
 class TransactionListItem extends ActionListItem {
   TransactionListItem({this.transaction});

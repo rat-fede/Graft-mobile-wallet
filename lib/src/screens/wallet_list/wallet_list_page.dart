@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/wallet/wallet_description.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
-import 'package:oxen_wallet/src/stores/wallet_list/wallet_list_store.dart';
-import 'package:oxen_wallet/src/screens/wallet_list/wallet_menu.dart';
-import 'package:oxen_wallet/src/widgets/picker.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/wallet/wallet_description.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/src/stores/wallet_list/wallet_list_store.dart';
+import 'package:graft_wallet/src/screens/wallet_list/wallet_menu.dart';
+import 'package:graft_wallet/src/widgets/picker.dart';
 
 class WalletListPage extends BasePage {
   @override
@@ -88,7 +88,7 @@ class WalletListBodyState extends State<WalletListBody> {
                                     wallet.name,
                                     style: TextStyle(
                                         color: isCurrentWallet
-                                            ? OxenPalette.teal
+                                            ? graftPalette.teal
                                             : Theme
                                             .of(context)
                                             .primaryTextTheme
@@ -100,7 +100,7 @@ class WalletListBodyState extends State<WalletListBody> {
                                   trailing: isCurrentWallet
                                       ? Icon(
                                     Icons.check_rounded,
-                                    color: OxenPalette.teal,
+                                    color: graftPalette.teal,
                                     size: 20.0,
                                   )
                                       : null)));
@@ -123,7 +123,7 @@ class WalletListBodyState extends State<WalletListBody> {
                   .primaryTextTheme
                   .button
                   .decorationColor,
-              iconColor: OxenPalette.teal,
+              iconColor: graftPalette.teal,
               iconBackgroundColor: Theme
                   .of(context)
                   .primaryIconTheme

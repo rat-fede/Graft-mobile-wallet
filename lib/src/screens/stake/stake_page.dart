@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/stake.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/screens/auth/auth_page.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/wallet/crypto_amount_format.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_amount_format.dart';
-import 'package:oxen_wallet/src/widgets/nav/nav_list_header.dart';
-import 'package:oxen_wallet/src/widgets/nav/nav_list_trailing.dart';
-import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/stake.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/screens/auth/auth_page.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/wallet/crypto_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_amount_format.dart';
+import 'package:graft_wallet/src/widgets/nav/nav_list_header.dart';
+import 'package:graft_wallet/src/widgets/nav/nav_list_trailing.dart';
+import 'package:graft_wallet/src/widgets/graft_dialog.dart';
 
 extension StakeParsing on StakeRow {
   double get ownedPercentage {
-    final percentage = oxenAmountToDouble(amount) / 15000;
+    final percentage = graftAmountToDouble(amount) / 15000;
     if (percentage > 1) return 1;
     return percentage;
   }
@@ -39,7 +39,7 @@ class StakePageBodyState extends State<StakePageBody> {
   List<StakeRow> allStakes = getAllStakes();
 
   Color get stakeColor =>
-      allStakes.isEmpty ? OxenPalette.lightRed : OxenPalette.lime;
+      allStakes.isEmpty ? graftPalette.lightRed : graftPalette.lime;
 
   int get totalAmountStaked {
     var totalAmount = 0;
@@ -51,7 +51,7 @@ class StakePageBodyState extends State<StakePageBody> {
 
   double get stakePercentage {
     if (allStakes.isEmpty) return 1;
-    final percentage = oxenAmountToDouble(totalAmountStaked) / 15000;
+    final percentage = graftAmountToDouble(totalAmountStaked) / 15000;
     if (percentage > 1) return 1;
     return percentage;
   }
@@ -80,7 +80,7 @@ class StakePageBodyState extends State<StakePageBody> {
                 ),
                 Center(
                     child: Text(allStakes.isNotEmpty
-                        ? oxenAmountToString(totalAmountStaked,
+                        ? graftAmountToString(totalAmountStaked,
                             detail: AmountDetail.none)
                         : S.current.nothing_staked)),
               ],
@@ -137,7 +137,7 @@ class StakePageBodyState extends State<StakePageBody> {
                         });
 
                         if (isAuthenticated) {
-                          await showConfirmOxenDialog(
+                          await showConfirmgraftDialog(
                               context,
                               S.of(context).title_confirm_unlock_stake,
                               S.of(context).body_confirm_unlock_stake(
@@ -164,7 +164,7 @@ class StakePageBodyState extends State<StakePageBody> {
                       background: Container(
                           padding: EdgeInsets.only(right: 10.0),
                           alignment: AlignmentDirectional.centerEnd,
-                          color: OxenPalette.red,
+                          color: graftPalette.red,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_list_service.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/wallet_restoration/wallet_restoration_store.dart';
-import 'package:oxen_wallet/src/widgets/seed_widget.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/services/wallet_list_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/wallet_restoration/wallet_restoration_store.dart';
+import 'package:graft_wallet/src/widgets/seed_widget.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
 
 class RestoreWalletFromSeedPage extends BasePage {
   RestoreWalletFromSeedPage(

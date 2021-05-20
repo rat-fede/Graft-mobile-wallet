@@ -1,4 +1,4 @@
-group 'io.oxen.coin'
+group 'io.graft.coin'
 version '1.0-SNAPSHOT'
 
 buildscript {

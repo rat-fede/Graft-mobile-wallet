@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'package:oxen_wallet/src/node/node.dart';
+import 'package:graft_wallet/src/node/node.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/oxen/account.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_wallet.dart';
-import 'package:oxen_wallet/src/wallet/oxen/subaddress.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/graft/account.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_wallet.dart';
+import 'package:graft_wallet/src/wallet/graft/subaddress.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 part 'wallet_store.g.dart';
 
@@ -19,7 +19,7 @@ abstract class WalletStoreBase with Store {
     _walletService = walletService;
     _settingsStore = settingsStore;
     name = '';
-    type = CryptoCurrency.oxen;
+    type = CryptoCurrency.graft;
     amountValue = '';
 
     if (_walletService.currentWallet != null) {
@@ -83,7 +83,7 @@ abstract class WalletStoreBase with Store {
   void setAccount(Account account) {
     final wallet = _walletService.currentWallet;
 
-    if (wallet is OxenWallet) {
+    if (wallet is graftWallet) {
       this.account = account;
       wallet.changeAccount(account);
     }
@@ -93,7 +93,7 @@ abstract class WalletStoreBase with Store {
   void setSubaddress(Subaddress subaddress) {
     final wallet = _walletService.currentWallet;
 
-    if (wallet is OxenWallet) {
+    if (wallet is graftWallet) {
       this.subaddress = subaddress;
       wallet.changeCurrentSubaddress(subaddress);
     }
@@ -122,7 +122,7 @@ abstract class WalletStoreBase with Store {
     wallet.onNameChange.listen((name) => this.name = name);
     wallet.onAddressChange.listen((address) => this.address = address);
 
-    if (wallet is OxenWallet) {
+    if (wallet is graftWallet) {
       _onAccountChangeSubscription =
           wallet.onAccountChange.listen((account) => this.account = account);
       _onSubaddressChangeSubscription = wallet.subaddress

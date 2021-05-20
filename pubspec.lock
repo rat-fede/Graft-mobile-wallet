@@ -343,6 +343,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  graft_coin:
+    dependency: "direct main"
+    description:
+      path: graft_coin
+      relative: true
+    source: path
+    version: "0.0.1"
   graphs:
     dependency: transitive
     description:
@@ -483,13 +490,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  oxen_coin:
-    dependency: "direct main"
-    description:
-      path: oxen_coin
-      relative: true
-    source: path
-    version: "0.0.1"
   package_config:
     dependency: transitive
     description:

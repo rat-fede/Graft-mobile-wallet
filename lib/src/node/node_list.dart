@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
-import 'package:oxen_wallet/devtools.dart';
-import 'package:oxen_wallet/src/node/node.dart';
+import 'package:graft_wallet/devtools.dart';
+import 'package:graft_wallet/src/node/node.dart';
 import 'package:yaml/yaml.dart';
 
 Future<List<Node>> loadDefaultNodes() async {

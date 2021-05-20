@@ -3,32 +3,32 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
-import 'package:oxen_coin/stake.dart' as oxen_stake;
-import 'package:oxen_coin/transaction_history.dart' as transaction_history;
-import 'package:oxen_coin/wallet.dart' as oxen_wallet;
-import 'package:oxen_wallet/src/node/node.dart';
-import 'package:oxen_wallet/src/node/sync_status.dart';
-import 'package:oxen_wallet/src/wallet/balance.dart';
-import 'package:oxen_wallet/src/wallet/oxen/account.dart';
-import 'package:oxen_wallet/src/wallet/oxen/account_list.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_balance.dart';
-import 'package:oxen_wallet/src/wallet/oxen/subaddress.dart';
-import 'package:oxen_wallet/src/wallet/oxen/subaddress_list.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/oxen_stake_transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/oxen_transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/oxen_transaction_history.dart';
-import 'package:oxen_wallet/src/wallet/transaction/pending_transaction.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_history.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/wallet_info.dart';
-import 'package:oxen_wallet/src/wallet/wallet_type.dart';
+import 'package:graft_coin/stake.dart' as graft_stake;
+import 'package:graft_coin/transaction_history.dart' as transaction_history;
+import 'package:graft_coin/wallet.dart' as graft_wallet;
+import 'package:graft_wallet/src/node/node.dart';
+import 'package:graft_wallet/src/node/sync_status.dart';
+import 'package:graft_wallet/src/wallet/balance.dart';
+import 'package:graft_wallet/src/wallet/graft/account.dart';
+import 'package:graft_wallet/src/wallet/graft/account_list.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_balance.dart';
+import 'package:graft_wallet/src/wallet/graft/subaddress.dart';
+import 'package:graft_wallet/src/wallet/graft/subaddress_list.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/graft_stake_transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/graft_transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/graft_transaction_history.dart';
+import 'package:graft_wallet/src/wallet/transaction/pending_transaction.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_history.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/wallet_info.dart';
+import 'package:graft_wallet/src/wallet/wallet_type.dart';
 import 'package:rxdart/rxdart.dart';
 
-const oxenBlockSize = 1000;
+const graftBlockSize = 1000;
 
-class OxenWallet extends Wallet {
-  OxenWallet({this.walletInfoSource, this.walletInfo}) {
+class graftWallet extends Wallet {
+  graftWallet({this.walletInfoSource, this.walletInfo}) {
     _cachedBlockchainHeight = 0;
     _isSaving = false;
     _lastSaveTime = 0;
@@ -38,17 +38,17 @@ class OxenWallet extends Wallet {
     _name = BehaviorSubject<String>();
     _address = BehaviorSubject<String>();
     _syncStatus = BehaviorSubject<SyncStatus>();
-    _onBalanceChange = BehaviorSubject<OxenBalance>();
+    _onBalanceChange = BehaviorSubject<graftBalance>();
     _account = BehaviorSubject<Account>()..add(Account(id: 0));
     _subaddress = BehaviorSubject<Subaddress>();
   }
 
-  static Future<OxenWallet> createdWallet(
+  static Future<graftWallet> createdWallet(
       {Box<WalletInfo> walletInfoSource,
       String name,
       bool isRecovery = false,
       int restoreHeight = 0}) async {
-    const type = WalletType.oxen;
+    const type = WalletType.graft;
     final id = walletTypeToString(type).toLowerCase() + '_' + name;
     final walletInfo = WalletInfo(
         id: id,
@@ -63,7 +63,7 @@ class OxenWallet extends Wallet {
         walletInfo: walletInfo, walletInfoSource: walletInfoSource);
   }
 
-  static Future<OxenWallet> load(
+  static Future<graftWallet> load(
       Box<WalletInfo> walletInfoSource, String name, WalletType type) async {
     final id = walletTypeToString(type).toLowerCase() + '_' + name;
     final walletInfo = walletInfoSource.values
@@ -72,11 +72,11 @@ class OxenWallet extends Wallet {
         walletInfoSource: walletInfoSource, walletInfo: walletInfo);
   }
 
-  static Future<OxenWallet> configured(
+  static Future<graftWallet> configured(
       {@required Box<WalletInfo> walletInfoSource,
       @required WalletInfo walletInfo}) async {
     final wallet =
-        OxenWallet(walletInfoSource: walletInfoSource, walletInfo: walletInfo);
+        graftWallet(walletInfoSource: walletInfoSource, walletInfo: walletInfo);
 
     if (walletInfo.isRecovery) {
       wallet.setRecoveringFromSeed();
@@ -96,7 +96,7 @@ class OxenWallet extends Wallet {
   String get name => _name.value;
 
   @override
-  WalletType getType() => WalletType.oxen;
+  WalletType getType() => WalletType.graft;
 
   @override
   Observable<SyncStatus> get syncStatus => _syncStatus.stream;
@@ -121,9 +121,9 @@ class OxenWallet extends Wallet {
   Box<WalletInfo> walletInfoSource;
   WalletInfo walletInfo;
 
-  oxen_wallet.SyncListener _listener;
+  graft_wallet.SyncListener _listener;
   BehaviorSubject<Account> _account;
-  BehaviorSubject<OxenBalance> _onBalanceChange;
+  BehaviorSubject<graftBalance> _onBalanceChange;
   BehaviorSubject<SyncStatus> _syncStatus;
   BehaviorSubject<String> _name;
   BehaviorSubject<String> _address;
@@ -156,7 +156,7 @@ class OxenWallet extends Wallet {
   }
 
   @override
-  Future<String> getFilename() async => oxen_wallet.getFilename();
+  Future<String> getFilename() async => graft_wallet.getFilename();
 
   @override
   Future<String> getName() async => getFilename()
@@ -164,27 +164,27 @@ class OxenWallet extends Wallet {
       .then((splitted) => splitted.last);
 
   @override
-  Future<String> getAddress() async => oxen_wallet.getAddress(
+  Future<String> getAddress() async => graft_wallet.getAddress(
       accountIndex: _account.value.id, addressIndex: _subaddress.value.id);
 
   @override
-  Future<String> getSeed() async => oxen_wallet.getSeed();
+  Future<String> getSeed() async => graft_wallet.getSeed();
 
   @override
   Future<int> getFullBalance() async =>
-      oxen_wallet.getFullBalance(accountIndex: _account.value.id);
+      graft_wallet.getFullBalance(accountIndex: _account.value.id);
 
   @override
   Future<int> getUnlockedBalance() async =>
-      oxen_wallet.getUnlockedBalance(accountIndex: _account.value.id);
+      graft_wallet.getUnlockedBalance(accountIndex: _account.value.id);
 
   @override
-  int getCurrentHeight() => oxen_wallet.getCurrentHeight();
+  int getCurrentHeight() => graft_wallet.getCurrentHeight();
 
   @override
   Future<int> getNodeHeight() async {
     _cachedGetNodeHeightOrUpdateRequest ??=
-        oxen_wallet.getNodeHeight().then((value) {
+        graft_wallet.getNodeHeight().then((value) {
       _cachedGetNodeHeightOrUpdateRequest = null;
       return value;
     });
@@ -193,19 +193,19 @@ class OxenWallet extends Wallet {
   }
 
   @override
-  Future<bool> isConnected() async => oxen_wallet.isConnected();
+  Future<bool> isConnected() async => graft_wallet.isConnected();
 
   @override
   Future<Map<String, String>> getKeys() async => {
-        'publicViewKey': oxen_wallet.getPublicViewKey(),
-        'privateViewKey': oxen_wallet.getSecretViewKey(),
-        'publicSpendKey': oxen_wallet.getPublicSpendKey(),
-        'privateSpendKey': oxen_wallet.getSecretSpendKey()
+        'publicViewKey': graft_wallet.getPublicViewKey(),
+        'privateViewKey': graft_wallet.getSecretViewKey(),
+        'publicSpendKey': graft_wallet.getPublicSpendKey(),
+        'privateSpendKey': graft_wallet.getSecretSpendKey()
       };
 
   @override
   TransactionHistory getHistory() {
-    _cachedTransactionHistory ??= OxenTransactionHistory();
+    _cachedTransactionHistory ??= graftTransactionHistory();
 
     return _cachedTransactionHistory;
   }
@@ -225,7 +225,7 @@ class OxenWallet extends Wallet {
   @override
   Future close() async {
     _listener?.stop();
-    oxen_wallet.closeCurrentWallet();
+    graft_wallet.closeCurrentWallet();
     await _name.close();
     await _address.close();
     await _subaddress.close();
@@ -244,7 +244,7 @@ class OxenWallet extends Wallet {
         return;
       }
 
-      await oxen_wallet.setupNode(
+      await graft_wallet.setupNode(
           address: node.uri,
           login: node.login,
           password: node.password,
@@ -267,7 +267,7 @@ class OxenWallet extends Wallet {
 
     try {
       _syncStatus.value = StartingSyncStatus();
-      oxen_wallet.startRefresh();
+      graft_wallet.startRefresh();
       _setListeners();
       _listener?.start();
     } catch (e) {
@@ -298,9 +298,9 @@ class OxenWallet extends Wallet {
   @override
   Future<PendingTransaction> createStake(
       TransactionCreationCredentials credentials) async {
-    final _credentials = credentials as OxenStakeTransactionCreationCredentials;
+    final _credentials = credentials as graftStakeTransactionCreationCredentials;
     final transactionDescription =
-        await oxen_stake.createStake(_credentials.address, _credentials.amount);
+        await graft_stake.createStake(_credentials.address, _credentials.amount);
 
     return PendingTransaction.fromTransactionDescription(
         transactionDescription);
@@ -309,7 +309,7 @@ class OxenWallet extends Wallet {
   @override
   Future<PendingTransaction> createTransaction(
       TransactionCreationCredentials credentials) async {
-    final _credentials = credentials as OxenTransactionCreationCredentials;
+    final _credentials = credentials as graftTransactionCreationCredentials;
     final transactionDescription = await transaction_history.createTransaction(
         address: _credentials.address,
         amount: _credentials.amount,
@@ -324,15 +324,15 @@ class OxenWallet extends Wallet {
   Future rescan({int restoreHeight = 0}) async {
     _syncStatus.value = StartingSyncStatus();
     setRefreshFromBlockHeight(height: restoreHeight);
-    oxen_wallet.rescanBlockchainAsync();
+    graft_wallet.rescanBlockchainAsync();
     _syncStatus.value = StartingSyncStatus();
   }
 
   void setRecoveringFromSeed() =>
-      oxen_wallet.setRecoveringFromSeed(isRecovery: true);
+      graft_wallet.setRecoveringFromSeed(isRecovery: true);
 
   void setRefreshFromBlockHeight({int height}) =>
-      oxen_wallet.setRefreshFromBlockHeight(height: height);
+      graft_wallet.setRefreshFromBlockHeight(height: height);
 
   Future setAsRecovered() async {
     walletInfo.isRecovery = false;
@@ -351,7 +351,7 @@ class OxenWallet extends Wallet {
       return;
     }
 
-    _onBalanceChange.add(OxenBalance(
+    _onBalanceChange.add(graftBalance(
         fullBalance: fullBalance, unlockedBalance: unlockedBalance));
   }
 
@@ -376,7 +376,7 @@ class OxenWallet extends Wallet {
 
     try {
       _isSaving = true;
-      await oxen_wallet.store();
+      await graft_wallet.store();
       _isSaving = false;
     } on PlatformException catch (e) {
       print(e);
@@ -385,8 +385,8 @@ class OxenWallet extends Wallet {
     }
   }
 
-  oxen_wallet.SyncListener setListeners() =>
-      oxen_wallet.setListeners(_onNewBlock, _onNewTransaction);
+  graft_wallet.SyncListener setListeners() =>
+      graft_wallet.setListeners(_onNewBlock, _onNewTransaction);
 
   Future _onNewBlock(int height, int blocksLeft, double ptc) async {
     await askForUpdateTransactionHistory();
@@ -394,7 +394,7 @@ class OxenWallet extends Wallet {
 
     if (blocksLeft < 100) {
       _syncStatus.add(SyncedSyncStatus());
-      await oxen_wallet.store();
+      await graft_wallet.store();
 
       if (walletInfo.isRecovery) {
         await setAsRecovered();
@@ -404,13 +404,13 @@ class OxenWallet extends Wallet {
     }
 
     if (blocksLeft <= 1) {
-      oxen_wallet.setRefreshFromBlockHeight(height: height);
+      graft_wallet.setRefreshFromBlockHeight(height: height);
     }
   }
 
   void _setListeners() {
     _listener?.stop();
-    _listener = oxen_wallet.setListeners(_onNewBlock, _onNewTransaction);
+    _listener = graft_wallet.setListeners(_onNewBlock, _onNewTransaction);
   }
 
   void _setInitialHeight() {
@@ -422,8 +422,8 @@ class OxenWallet extends Wallet {
 
     if (currentHeight <= 1) {
       final height = _getHeightByDate(walletInfo.date);
-      oxen_wallet.setRecoveringFromSeed(isRecovery: true);
-      oxen_wallet.setRefreshFromBlockHeight(height: height);
+      graft_wallet.setRecoveringFromSeed(isRecovery: true);
+      graft_wallet.setRefreshFromBlockHeight(height: height);
     }
   }
 
@@ -437,7 +437,7 @@ class OxenWallet extends Wallet {
   }
 
   int _getHeightByDate(DateTime date) {
-    final nodeHeight = oxen_wallet.getNodeHeightSync();
+    final nodeHeight = graft_wallet.getNodeHeightSync();
     final heightDistance = _getHeightDistance(date);
 
     if (nodeHeight <= 0) {
@@ -464,7 +464,7 @@ class OxenWallet extends Wallet {
       await askForUpdateBalance();
 
       final heightDifference = nodeHeight - currentHeight;
-      final isRefreshed = heightDifference < oxenBlockSize;
+      final isRefreshed = heightDifference < graftBlockSize;
 
       if (isRefreshed) {
         _syncStatus.add(SyncedSyncStatus());

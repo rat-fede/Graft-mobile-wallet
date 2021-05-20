@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint oxen_coin.podspec' to validate before publishing.
+# Run `pod lib lint graft_coin.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'oxen_coin'
+  s.name             = 'graft_coin'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
@@ -14,8 +14,8 @@ A new flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.exclude_files = ['Classes/oxen_api.cpp', 'Classes/OxenWalletListenerWrapper.mm']
-  s.public_header_files = 'Classes/**/*.h, Classes/*.h, External/ios/oxen/include/*.h'
+  s.exclude_files = ['Classes/graft_api.cpp', 'Classes/graftWalletListenerWrapper.mm']
+  s.public_header_files = 'Classes/**/*.h, Classes/*.h, External/ios/graft/include/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
   s.swift_version = '5.0'
@@ -26,11 +26,11 @@ A new flutter plugin project.
       'CLANG_CXX_LIBRARY' => 'libc++'
       }
 
-  s.subspec 'Oxen' do |oxen|
-    oxen.preserve_paths = 'External/ios/oxen/include/*.h'
-    oxen.vendored_libraries = 'External/ios/oxen/lib/*.a'
-    oxen.libraries = 'wallet_api'
-    oxen.xcconfig = {}
+  s.subspec 'graft' do |graft|
+    graft.preserve_paths = 'External/ios/graft/include/*.h'
+    graft.vendored_libraries = 'External/ios/graft/lib/*.a'
+    graft.libraries = 'wallet_api'
+    graft.xcconfig = {}
   end
 
 end

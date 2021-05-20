@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 
 class NavListHeader extends StatelessWidget {
   NavListHeader({this.title});

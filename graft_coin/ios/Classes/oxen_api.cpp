@@ -5,14 +5,14 @@
 #include <iostream>
 #include <unistd.h>
 #include <thread>
-// #include "OxenWalletListener.h"
+// #include "graftWalletListener.h"
 #ifdef ANDROID
-#include "../External/android/oxen/include/wallet2_api.h"
+#include "../External/android/graft/include/wallet2_api.h"
 #else
-#include "../External/ios/oxen/include/wallet2_api.h"
+#include "../External/ios/graft/include/wallet2_api.h"
 #endif
 
-namespace Oxen = Wallet;
+namespace graft = Wallet;
 
 // Macro to force symbol visibility, and prevent the symbol being stripped
 #define EXPORT __attribute__((visibility("default"))) __attribute__((used))
@@ -55,13 +55,13 @@ extern "C"
         }
     };
 
-    struct OxenWalletListener : Oxen::WalletListener
+    struct graftWalletListener : graft::WalletListener
     {
         uint64_t m_height;
         bool m_need_to_refresh;
         bool m_new_transaction;
 
-        OxenWalletListener()
+        graftWalletListener()
         {
             m_height = 0;
             m_need_to_refresh = false;
@@ -139,7 +139,7 @@ extern "C"
 
         int64_t datetime;
 
-        TransactionInfoRow(Oxen::TransactionInfo *transaction)
+        TransactionInfoRow(graft::TransactionInfo *transaction)
         {
             amount = transaction->amount();
             fee = transaction->fee();
@@ -160,9 +160,9 @@ extern "C"
         uint64_t amount;
         uint64_t fee;
         char *hash;
-        Oxen::PendingTransaction *transaction;
+        graft::PendingTransaction *transaction;
 
-        PendingTransactionRaw(Oxen::PendingTransaction *_transaction)
+        PendingTransactionRaw(graft::PendingTransaction *_transaction)
         {
             transaction = _transaction;
             amount = _transaction->amount();
@@ -187,9 +187,9 @@ extern "C"
     {
       bool success;
       char *msg;
-      Oxen::PendingTransaction *pendingTransaction;
+      graft::PendingTransaction *pendingTransaction;
 
-      StakeUnlockResult(bool _success, char *_msg,  Oxen::PendingTransaction *_pendingTransaction)
+      StakeUnlockResult(bool _success, char *_msg,  graft::PendingTransaction *_pendingTransaction)
       {
         success = _success;
         msg = _msg;
@@ -197,17 +197,17 @@ extern "C"
       }
     };
 
-    Oxen::Wallet *m_wallet;
-    Oxen::TransactionHistory *m_transaction_history;
-    OxenWalletListener *m_listener;
-    Oxen::Subaddress *m_subaddress;
-    Oxen::SubaddressAccount *m_account;
+    graft::Wallet *m_wallet;
+    graft::TransactionHistory *m_transaction_history;
+    graftWalletListener *m_listener;
+    graft::Subaddress *m_subaddress;
+    graft::SubaddressAccount *m_account;
     uint64_t m_last_known_wallet_height;
     uint64_t m_cached_syncing_blockchain_height = 0;
     std::mutex store_mutex;
 
 
-    void change_current_wallet(Oxen::Wallet *wallet)
+    void change_current_wallet(graft::Wallet *wallet)
     {
         m_wallet = wallet;
         m_listener = nullptr;
@@ -242,7 +242,7 @@ extern "C"
     }
 
     EXPORT
-    Oxen::Wallet *get_current_wallet()
+    graft::Wallet *get_current_wallet()
     {
         return m_wallet;
     }
@@ -250,15 +250,15 @@ extern "C"
     EXPORT
     bool create_wallet(char *path, char *password, char *language, int32_t networkType, char *error)
     {
-        Oxen::NetworkType _networkType = static_cast<Oxen::NetworkType>(networkType);
-        Oxen::WalletManagerBase *walletManager = Oxen::WalletManagerFactory::getWalletManager();
-        Oxen::Wallet *wallet = walletManager->createWallet(path, password, language, _networkType);
+        graft::NetworkType _networkType = static_cast<graft::NetworkType>(networkType);
+        graft::WalletManagerBase *walletManager = graft::WalletManagerFactory::getWalletManager();
+        graft::Wallet *wallet = walletManager->createWallet(path, password, language, _networkType);
 
         auto stat = wallet->status();
 
         auto& [status, errorString] = stat;
 
-        if (status != Oxen::Wallet::Status_Ok)
+        if (status != graft::Wallet::Status_Ok)
         {
             error = strdup(errorString.c_str());
             return false;
@@ -269,7 +269,7 @@ extern "C"
 
         stat = wallet->status();
 
-        if (status != Oxen::Wallet::Status_Ok)
+        if (status != graft::Wallet::Status_Ok)
         {
             error = strdup(errorString.c_str());
             return false;
@@ -283,8 +283,8 @@ extern "C"
     EXPORT
     bool restore_wallet_from_seed(char *path, char *password, char *seed, int32_t networkType, uint64_t restoreHeight, char *error)
     {
-        Oxen::NetworkType _networkType = static_cast<Oxen::NetworkType>(networkType);
-        Oxen::Wallet *wallet = Oxen::WalletManagerFactory::getWalletManager()->recoveryWallet(
+        graft::NetworkType _networkType = static_cast<graft::NetworkType>(networkType);
+        graft::Wallet *wallet = graft::WalletManagerFactory::getWalletManager()->recoveryWallet(
             std::string(path),
             std::string(password),
             std::string(seed),
@@ -293,7 +293,7 @@ extern "C"
 
         auto [status, errorString] = wallet->status();
 
-        if (status != Oxen::Wallet::Status_Ok)
+        if (status != graft::Wallet::Status_Ok)
         {
             error = strdup(errorString.c_str());
             return false;
@@ -306,8 +306,8 @@ extern "C"
     EXPORT
     bool restore_wallet_from_keys(char *path, char *password, char *language, char *address, char *viewKey, char *spendKey, int32_t networkType, uint64_t restoreHeight, char *error)
     {
-        Oxen::NetworkType _networkType = static_cast<Oxen::NetworkType>(networkType);
-        Oxen::Wallet *wallet = Oxen::WalletManagerFactory::getWalletManager()->createWalletFromKeys(
+        graft::NetworkType _networkType = static_cast<graft::NetworkType>(networkType);
+        graft::Wallet *wallet = graft::WalletManagerFactory::getWalletManager()->createWalletFromKeys(
             std::string(path),
             std::string(password),
             std::string(language),
@@ -320,7 +320,7 @@ extern "C"
 
         auto [status, errorString] = wallet->status();
 
-        if (status != Oxen::Wallet::Status_Ok || !errorString.empty())
+        if (status != graft::Wallet::Status_Ok || !errorString.empty())
         {
             error = strdup(errorString.c_str());
             return false;
@@ -334,21 +334,21 @@ extern "C"
     void load_wallet(char *path, char *password, int32_t nettype)
     {
         nice(19);
-        Oxen::NetworkType networkType = static_cast<Oxen::NetworkType>(nettype);
-        Oxen::Wallet *wallet = Oxen::WalletManagerFactory::getWalletManager()->openWallet(std::string(path), std::string(password), networkType);
+        graft::NetworkType networkType = static_cast<graft::NetworkType>(nettype);
+        graft::Wallet *wallet = graft::WalletManagerFactory::getWalletManager()->openWallet(std::string(path), std::string(password), networkType);
         change_current_wallet(wallet);
     }
 
     EXPORT
     bool is_wallet_exist(char *path)
     {
-        return Oxen::WalletManagerFactory::getWalletManager()->walletExists(std::string(path));
+        return graft::WalletManagerFactory::getWalletManager()->walletExists(std::string(path));
     }
 
     EXPORT
     void close_current_wallet()
     {
-        Oxen::WalletManagerFactory::getWalletManager()->closeWallet(get_current_wallet());
+        graft::WalletManagerFactory::getWalletManager()->closeWallet(get_current_wallet());
         change_current_wallet(nullptr);
     }
 
@@ -436,7 +436,7 @@ extern "C"
     bool setup_node(char *address, char *login, char *password, bool use_ssl, bool is_light_wallet, char *error)
     {
         nice(19);
-        Oxen::Wallet *wallet = get_current_wallet();
+        graft::Wallet *wallet = get_current_wallet();
         
         std::string _login = "";
         std::string _password = "";
@@ -525,14 +525,14 @@ extern "C"
     {
         nice(19);
 
-        Oxen::PendingTransaction *transaction;
+        graft::PendingTransaction *transaction;
 
-        uint64_t _amount = Oxen::Wallet::amountFromString(std::string(amount));
+        uint64_t _amount = graft::Wallet::amountFromString(std::string(amount));
         transaction = m_wallet->stakePending(std::string(service_node_key), _amount);
 
         int status = transaction->status().first;
 
-        if (status == Oxen::PendingTransaction::Status::Status_Error || status == Oxen::PendingTransaction::Status::Status_Critical)
+        if (status == graft::PendingTransaction::Status::Status_Error || status == graft::PendingTransaction::Status::Status_Critical)
         {
             error = Utf8Box(strdup(transaction->status().second.c_str()));
             return false;
@@ -545,14 +545,14 @@ extern "C"
     EXPORT
     bool can_request_stake_unlock(char *service_node_key)
     {
-        std::unique_ptr<Oxen::StakeUnlockResult> stakeUnlockResult{m_wallet->canRequestStakeUnlock(service_node_key)};
+        std::unique_ptr<graft::StakeUnlockResult> stakeUnlockResult{m_wallet->canRequestStakeUnlock(service_node_key)};
         return stakeUnlockResult->success();
     }
 
     EXPORT
     bool submit_stake_unlock(char *service_node_key, Utf8Box &error, PendingTransactionRaw &pendingTransaction)
     {
-        std::unique_ptr<Oxen::StakeUnlockResult> stakeUnlockResult{m_wallet->requestStakeUnlock(service_node_key)};
+        std::unique_ptr<graft::StakeUnlockResult> stakeUnlockResult{m_wallet->requestStakeUnlock(service_node_key)};
 
         if (stakeUnlockResult->success())
         {
@@ -578,11 +578,11 @@ extern "C"
     {
         nice(19);
 
-        Oxen::PendingTransaction *transaction;
+        graft::PendingTransaction *transaction;
 
         if (amount != nullptr)
         {
-            uint64_t _amount = Oxen::Wallet::amountFromString(std::string(amount));
+            uint64_t _amount = graft::Wallet::amountFromString(std::string(amount));
             transaction = m_wallet->createTransaction(std::string(address), _amount, priority, subaddr_account);
         }
         else
@@ -592,7 +592,7 @@ extern "C"
 
         int status = transaction->status().first;
 
-        if (status == Oxen::PendingTransaction::Status::Status_Error || status == Oxen::PendingTransaction::Status::Status_Critical)
+        if (status == graft::PendingTransaction::Status::Status_Error || status == graft::PendingTransaction::Status::Status_Critical)
         {
             error = Utf8Box(strdup(transaction->status().second.c_str()));
             return false;
@@ -691,20 +691,20 @@ extern "C"
              free(m_listener);
         }
 
-        m_listener = new OxenWalletListener();
+        m_listener = new graftWalletListener();
         get_current_wallet()->setListener(m_listener);
     }
 
     EXPORT
     int64_t *subaddress_get_all()
     {
-        std::vector<Oxen::SubaddressRow *> _subaddresses = m_subaddress->getAll();
+        std::vector<graft::SubaddressRow *> _subaddresses = m_subaddress->getAll();
         size_t size = _subaddresses.size();
         int64_t *subaddresses = (int64_t *)malloc(size * sizeof(int64_t));
 
         for (int i = 0; i < size; i++)
         {
-            Oxen::SubaddressRow *row = _subaddresses[i];
+            graft::SubaddressRow *row = _subaddresses[i];
             SubaddressRow *_row = new SubaddressRow(row->getRowId(), strdup(row->getAddress().c_str()), strdup(row->getLabel().c_str()));
             subaddresses[i] = reinterpret_cast<int64_t>(_row);
         }
@@ -715,7 +715,7 @@ extern "C"
     EXPORT
     int32_t subaddress_size()
     {
-        std::vector<Oxen::SubaddressRow *> _subaddresses = m_subaddress->getAll();
+        std::vector<graft::SubaddressRow *> _subaddresses = m_subaddress->getAll();
         return static_cast<int32_t>(_subaddresses.size());
     }
 
@@ -746,13 +746,13 @@ extern "C"
     EXPORT
     int64_t *account_get_all()
     {
-        std::vector<Oxen::SubaddressAccountRow *> _accounts = m_account->getAll();
+        std::vector<graft::SubaddressAccountRow *> _accounts = m_account->getAll();
         size_t size = _accounts.size();
         int64_t *accounts = (int64_t *)malloc(size * sizeof(int64_t));
 
         for (int i = 0; i < size; i++)
         {
-            Oxen::SubaddressAccountRow *row = _accounts[i];
+            graft::SubaddressAccountRow *row = _accounts[i];
             AccountRow *_row = new AccountRow(row->getRowId(), strdup(row->getLabel().c_str()));
             accounts[i] = reinterpret_cast<int64_t>(_row);
         }
@@ -781,13 +781,13 @@ extern "C"
     EXPORT
     int64_t *transactions_get_all()
     {
-        std::vector<Oxen::TransactionInfo *> transactions = m_transaction_history->getAll();
+        std::vector<graft::TransactionInfo *> transactions = m_transaction_history->getAll();
         size_t size = transactions.size();
         int64_t *transactionAddresses = (int64_t *)malloc(size * sizeof(int64_t));
 
         for (int i = 0; i < size; i++)
         {
-            Oxen::TransactionInfo *row = transactions[i];
+            graft::TransactionInfo *row = transactions[i];
             TransactionInfoRow *tx = new TransactionInfoRow(row);
             transactionAddresses[i] = reinterpret_cast<int64_t>(tx);
         }
@@ -810,8 +810,8 @@ extern "C"
     EXPORT
     void on_startup(void)
     {
-        Oxen::Utils::onStartup();
-        Oxen::WalletManagerFactory::setLogLevel(0);
+        graft::Utils::onStartup();
+        graft::WalletManagerFactory::setLogLevel(0);
     }
 
     EXPORT

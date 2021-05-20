@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
 
 part 'rescan_wallet_store.g.dart';
 

@@ -1,6 +1,6 @@
 {
-  "welcome" : "WELCOME\nTO OXEN WALLET",
-  "first_wallet_text" : "Awesome wallet\nfor Oxen",
+  "welcome" : "WELCOME\nTO graft WALLET",
+  "first_wallet_text" : "Awesome wallet\nfor graft",
   "please_make_selection" : "Please make selection below to\ncreate or recover your wallet.",
   "create_new" : "Create new",
   "restore_wallet" : "Restore wallet",
@@ -30,9 +30,9 @@
   "wallet_menu" : "Menu",
   "Blocks_remaining" : "{status} Blocks Remaining",
   "please_try_to_connect_to_another_node" : "Please try to connect to another node",
-  "oxen_hidden" : "OXEN Hidden",
-  "oxen_available_balance" : "OXEN Available Balance",
-  "oxen_full_balance" : "OXEN Full Balance",
+  "graft_hidden" : "graft Hidden",
+  "graft_available_balance" : "graft Available Balance",
+  "graft_full_balance" : "graft Full Balance",
   "send" : "Send",
   "receive" : "Receive",
   "transactions" : "Transactions",
@@ -70,7 +70,7 @@
   "commit_transaction_amount_fee" : "Commit transaction\nAmount: {amount}\nFee: {fee}",
   "sending" : "Sending",
   "transaction_sent" : "Transaction sent!",
-  "send_oxen" : "Send OXEN",
+  "send_graft" : "Send graft",
 
   "faq" : "FAQ",
   "changelog" : "Changelog",
@@ -115,7 +115,7 @@
   "restore_description_from_seed_keys" : "Get back your wallet from seed/keys that you've saved to secure place",
   "restore_next" : "Next",
   "restore_title_from_backup" : "Restore from a back-up file",
-  "restore_description_from_backup" : "You can restore the whole Oxen Wallet app from your back-up file",
+  "restore_description_from_backup" : "You can restore the whole graft Wallet app from your back-up file",
   "restore_seed_keys_restore" : "Seed/Keys Restore",
   "restore_title_from_seed" : "Restore from seed",
   "restore_description_from_seed" : "Restore your wallet from either the 25 word or 13 word combination code",
@@ -148,9 +148,9 @@
   "seed_language_italian" : "Italian",
 
 
-  "send_title" : "Send Oxen",
+  "send_title" : "Send graft",
   "send_your_wallet" : "Your wallet",
-  "send_oxen_address" : "Oxen address",
+  "send_graft_address" : "graft address",
   "all" : "ALL",
   "send_error_currency" : "Currency can only contain numbers",
   "send_estimated_fee" : "Estimated fee:",
@@ -165,7 +165,7 @@
   "stake_more" : "Stake more",
   "nothing_staked" : "Nothing staked yet",
   "service_node_key": "Service Node Key",
-  "stake_oxen": "Stake Oxen",
+  "stake_graft": "Stake graft",
   "title_confirm_unlock_stake": "Unlock Stake",
   "body_confirm_unlock_stake": "Do you really want to unlock your stake from {serviceNodeKey}?",
   "unlock_stake_requested": "Stake unlock requested",
@@ -231,7 +231,7 @@
   "transaction_details_recipient_address" : "Recipient address",
 
 
-  "wallet_list_title" : "Oxen Wallet",
+  "wallet_list_title" : "graft Wallet",
   "wallet_list_create_new_wallet" : "Create New Wallet",
   "wallet_list_restore_wallet" : "Restore Wallet",
   "wallet_list_load_wallet" : "Load wallet",
@@ -257,7 +257,7 @@
   "error_text_node_address" : "Please enter a iPv4 address",
   "error_text_node_port" : "Node port can only contain numbers between 0 and 65535",
   "error_text_payment_id" : "Payment ID can only contain from 16 to 64 chars in hex",
-  "error_text_oxen" : "OXEN value can't exceed available balance.\nThe number of fraction digits must be less or equal to 12",
+  "error_text_graft" : "graft value can't exceed available balance.\nThe number of fraction digits must be less or equal to 12",
   "error_text_fiat" : "Value of amount can't exceed available balance.\nThe number of fraction digits must be less or equal to 2",
   "error_text_subaddress_name" : "Subaddress name can't contain ` , ' \" symbols\nand must be between 1 and 20 characters long",
   "error_text_amount" : "Amount can only contain numbers",
@@ -303,12 +303,12 @@
   "biometric_auth_reason" : "Scan your fingerprint to authenticate",
   "version" : "Version {currentVersion}",
 
-  "openalias_alert_title" : "OXEN Recipient Detected",
+  "openalias_alert_title" : "graft Recipient Detected",
   "openalias_alert_content" : "You will be sending funds to\n{recipient_name}",
 
   "dangerzone": "Dangerzone",
   "yes_im_sure": "Yes, I'm sure!",
-  "never_give_your": "NEVER give your Oxen wallet {item} to ANYONE!",
-  "dangerzone_warning": "NEVER input your Oxen wallet {item} into any software or website other than the OFFICIAL Oxen wallets downloaded directly from the {app_store}, the Oxen website, or the Oxen GitHub.\nAre you sure you want to access your wallet {item}?",
+  "never_give_your": "NEVER give your graft wallet {item} to ANYONE!",
+  "dangerzone_warning": "NEVER input your graft wallet {item} into any software or website other than the OFFICIAL graft wallets downloaded directly from the {app_store}, the graft website, or the graft GitHub.\nAre you sure you want to access your wallet {item}?",
   "keys_title": "Keys"
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/language.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/language.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/widgets/graft_dialog.dart';
 import 'package:provider/provider.dart';
 
 class ChangeLanguage extends BasePage {
@@ -42,7 +42,7 @@ class ChangeLanguage extends BasePage {
                 ),
                 onTap: () async {
                   if (!isCurrent) {
-                    await showSimpleOxenDialog(
+                    await showSimplegraftDialog(
                       context,
                       S.of(context).change_language,
                       S.of(context).change_language_to(

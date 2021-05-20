@@ -1,4 +1,4 @@
-#include "../External/android/oxen/include/wallet2_api.h"
+#include "../External/android/graft/include/wallet2_api.h"
 
-@implementation OxenWalletListener
+@implementation graftWalletListener
 @end

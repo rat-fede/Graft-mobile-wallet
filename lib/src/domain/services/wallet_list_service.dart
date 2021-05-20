@@ -3,15 +3,15 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive/hive.dart';
-import 'package:oxen_wallet/src/domain/common/encrypt.dart';
-import 'package:oxen_wallet/src/domain/common/secret_store_key.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_wallets_manager.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/wallet_description.dart';
-import 'package:oxen_wallet/src/wallet/wallet_info.dart';
-import 'package:oxen_wallet/src/wallet/wallet_type.dart';
-import 'package:oxen_wallet/src/wallet/wallets_manager.dart';
+import 'package:graft_wallet/src/domain/common/encrypt.dart';
+import 'package:graft_wallet/src/domain/common/secret_store_key.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_wallets_manager.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/wallet_description.dart';
+import 'package:graft_wallet/src/wallet/wallet_info.dart';
+import 'package:graft_wallet/src/wallet/wallet_type.dart';
+import 'package:graft_wallet/src/wallet/wallets_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
@@ -109,8 +109,8 @@ class WalletListService {
 
   Future changeWalletManger({WalletType walletType}) async {
     switch (walletType) {
-      case WalletType.oxen:
-        walletsManager = OxenWalletsManager(walletInfoSource: walletInfoSource);
+      case WalletType.graft:
+        walletsManager = graftWalletsManager(walletInfoSource: walletInfoSource);
         break;
       case WalletType.monero:
       case WalletType.none:

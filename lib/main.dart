@@ -1,5 +1,5 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_priority.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_priority.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -7,34 +7,34 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
-import 'package:oxen_coin/wallet.dart' as oxen_wallet;
-import 'package:oxen_wallet/router.dart' as oxenroute;
+import 'package:graft_coin/wallet.dart' as graft_wallet;
+import 'package:graft_wallet/router.dart' as graftroute;
 import 'theme_changer.dart';
 import 'themes.dart';
-import 'package:oxen_wallet/src/domain/common/get_encryption_key.dart';
-import 'package:oxen_wallet/src/domain/common/contact.dart';
-import 'package:oxen_wallet/src/node/node.dart';
-import 'package:oxen_wallet/src/wallet/wallet_info.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_description.dart';
-import 'package:oxen_wallet/src/reactions/set_reactions.dart';
-import 'package:oxen_wallet/src/stores/login/login_store.dart';
-import 'package:oxen_wallet/src/stores/balance/balance_store.dart';
-import 'package:oxen_wallet/src/stores/sync/sync_store.dart';
-import 'package:oxen_wallet/src/stores/wallet/wallet_store.dart';
-import 'package:oxen_wallet/src/screens/root/root.dart';
-import 'package:oxen_wallet/src/stores/authentication/authentication_store.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/stores/price/price_store.dart';
-import 'package:oxen_wallet/src/domain/services/user_service.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_list_service.dart';
-import 'package:oxen_wallet/src/domain/common/balance_display_mode.dart';
-import 'package:oxen_wallet/src/domain/common/default_settings_migration.dart';
-import 'package:oxen_wallet/src/domain/common/fiat_currency.dart';
-import 'package:oxen_wallet/src/wallet/wallet_type.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/language.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/src/domain/common/get_encryption_key.dart';
+import 'package:graft_wallet/src/domain/common/contact.dart';
+import 'package:graft_wallet/src/node/node.dart';
+import 'package:graft_wallet/src/wallet/wallet_info.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_description.dart';
+import 'package:graft_wallet/src/reactions/set_reactions.dart';
+import 'package:graft_wallet/src/stores/login/login_store.dart';
+import 'package:graft_wallet/src/stores/balance/balance_store.dart';
+import 'package:graft_wallet/src/stores/sync/sync_store.dart';
+import 'package:graft_wallet/src/stores/wallet/wallet_store.dart';
+import 'package:graft_wallet/src/screens/root/root.dart';
+import 'package:graft_wallet/src/stores/authentication/authentication_store.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/stores/price/price_store.dart';
+import 'package:graft_wallet/src/domain/services/user_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_list_service.dart';
+import 'package:graft_wallet/src/domain/common/balance_display_mode.dart';
+import 'package:graft_wallet/src/domain/common/default_settings_migration.dart';
+import 'package:graft_wallet/src/domain/common/fiat_currency.dart';
+import 'package:graft_wallet/src/wallet/wallet_type.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/language.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
 
 void main() async {
   try {
@@ -82,7 +82,7 @@ void main() async {
         nodes: nodes,
         sharedPreferences: sharedPreferences,
         initialFiatCurrency: FiatCurrency.usd,
-        initialTransactionPriority: OxenTransactionPriority.blink,
+        initialTransactionPriority: graftTransactionPriority.blink,
         initialBalanceDisplayMode: BalanceDisplayMode.availableBalance);
     final priceStore = PriceStore();
     final walletStore =
@@ -120,7 +120,7 @@ void main() async {
       Provider(create: (_) => nodes),
       Provider(create: (_) => transactionDescriptions),
       Provider(create: (_) => seedLanguageStore)
-    ], child: OxenWalletApp()));
+    ], child: graftWalletApp()));
   } catch (e) {
     runApp(MaterialApp(
       debugShowCheckedModeBanner: true,
@@ -144,18 +144,18 @@ Future<void> initialSetup(
     Box<Node> nodes,
     AuthenticationStore authStore,
     int initialMigrationVersion = 1,
-    WalletType initialWalletType = WalletType.oxen}) async {
+    WalletType initialWalletType = WalletType.graft}) async {
   await walletListService.changeWalletManger(walletType: initialWalletType);
   await defaultSettingsMigration(
       version: initialMigrationVersion,
       sharedPreferences: sharedPreferences,
       nodes: nodes);
   await authStore.started();
-  oxen_wallet.onStartup();
+  graft_wallet.onStartup();
 }
 
-class OxenWalletApp extends StatelessWidget {
-  OxenWalletApp() {
+class graftWalletApp extends StatelessWidget {
+  graftWalletApp() {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
@@ -208,7 +208,7 @@ class MaterialAppWithTheme extends StatelessWidget {
         ],
         supportedLocales: S.delegate.supportedLocales,
         locale: Locale(currentLanguage.getCurrentLanguage()),
-        onGenerateRoute: (settings) => oxenroute.Router.generateRoute(
+        onGenerateRoute: (settings) => graftroute.Router.generateRoute(
             sharedPreferences: sharedPreferences,
             walletListService: walletListService,
             walletService: walletService,

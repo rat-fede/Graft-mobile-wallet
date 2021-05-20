@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/node_list/node_list_store.dart';
-import 'package:oxen_wallet/src/widgets/oxen_text_field.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/node_list/node_list_store.dart';
+import 'package:graft_wallet/src/widgets/graft_text_field.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
 import 'package:provider/provider.dart';
 
 class NewNodePage extends BasePage {
@@ -50,7 +50,7 @@ class NewNodeFormState extends State<NewNodePageForm> {
                   EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 30),
               child: Column(
                 children: <Widget>[
-                  OxenTextField(
+                  graftTextField(
                     hintText: S.of(context).node_address,
                     controller: _nodeAddressController,
                     validator: (value) {
@@ -60,7 +60,7 @@ class NewNodeFormState extends State<NewNodePageForm> {
                   ),
                   Padding(
                       padding: EdgeInsets.only(top: 20),
-                      child: OxenTextField(
+                      child: graftTextField(
                         hintText: S.of(context).node_port,
                         controller: _nodePortController,
                         keyboardType: TextInputType.numberWithOptions(
@@ -72,14 +72,14 @@ class NewNodeFormState extends State<NewNodePageForm> {
                       )),
                   Padding(
                       padding: EdgeInsets.only(top: 20),
-                      child: OxenTextField(
+                      child: graftTextField(
                         hintText: S.of(context).login,
                         controller: _loginController,
                         validator: (value) => null,
                       )),
                   Padding(
                       padding: EdgeInsets.only(top: 20),
-                      child: OxenTextField(
+                      child: graftTextField(
                         hintText: S.of(context).password,
                         controller: _passwordController,
                         validator: (value) => null,

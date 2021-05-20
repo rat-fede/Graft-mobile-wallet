@@ -2,10 +2,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
 
 class DisclaimerPage extends BasePage {
   DisclaimerPage({this.isReadOnly = false});

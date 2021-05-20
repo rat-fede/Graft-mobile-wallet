@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/screens/seed_language/widgets/seed_language_picker.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/screens/seed_language/widgets/seed_language_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
 
 class SeedLanguage extends BasePage {
   final imageSeed = Image.asset('assets/images/seedIco.png');

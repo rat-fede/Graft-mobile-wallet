@@ -1,7 +1,7 @@
-import 'package:oxen_coin/transaction_history.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_amount_format.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_priority.dart';
+import 'package:graft_coin/transaction_history.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_amount_format.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_priority.dart';
 
-double calculateEstimatedFee({OxenTransactionPriority priority}) {
-  return oxenAmountToDouble(estimateTransactionFee(priority.raw));
+double calculateEstimatedFee({graftTransactionPriority priority}) {
+  return graftAmountToDouble(estimateTransactionFee(priority.raw));
 }

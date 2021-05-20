@@ -4,18 +4,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/stores/wallet_creation/wallet_creation_store.dart';
-import 'package:oxen_wallet/src/stores/wallet_creation/wallet_creation_state.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_list_service.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
-import 'package:oxen_wallet/src/screens/seed_language/widgets/seed_language_picker.dart';
-import 'package:oxen_wallet/src/util/generate_name.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/stores/wallet_creation/wallet_creation_store.dart';
+import 'package:graft_wallet/src/stores/wallet_creation/wallet_creation_state.dart';
+import 'package:graft_wallet/src/domain/services/wallet_list_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/src/screens/seed_language/widgets/seed_language_picker.dart';
+import 'package:graft_wallet/src/util/generate_name.dart';
 
 class NewWalletPage extends BasePage {
   NewWalletPage(
@@ -86,7 +86,7 @@ class _WalletNameFormState extends State<WalletNameForm> {
         content: Column(children: [
           Padding(
             padding: EdgeInsets.all(20),
-            child: Image.asset('assets/images/oxen.png',
+            child: Image.asset('assets/images/graft.png',
                 height: 124, width: 400),
           ),
           Padding(
@@ -104,7 +104,7 @@ class _WalletNameFormState extends State<WalletNameForm> {
                       hintText: S.of(context).wallet_name,
                       focusedBorder: UnderlineInputBorder(
                           borderSide:
-                              BorderSide(color: OxenPalette.teal, width: 2.0)),
+                              BorderSide(color: graftPalette.teal, width: 2.0)),
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                               color: Theme.of(context).focusColor,

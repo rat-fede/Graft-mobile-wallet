@@ -31,11 +31,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m5(key) => "Copied ${key} to Clipboard";
 
-  static m6(item, app_store) => "NEVER input your Oxen wallet ${item} into any software or website other than the OFFICIAL Oxen wallets downloaded directly from the ${app_store}, the Oxen website, or the Oxen GitHub.\nAre you sure you want to access your wallet ${item}?";
+  static m6(item, app_store) => "NEVER input your graft wallet ${item} into any software or website other than the OFFICIAL graft wallets downloaded directly from the ${app_store}, the graft website, or the graft GitHub.\nAre you sure you want to access your wallet ${item}?";
 
   static m7(state_error) => "Failed authentication. ${state_error}";
 
-  static m8(item) => "NEVER give your Oxen wallet ${item} to ANYONE!";
+  static m8(item) => "NEVER give your graft wallet ${item} to ANYONE!";
 
   static m9(recipient_name) => "You will be sending funds to\n${recipient_name}";
 
@@ -113,7 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_text_keys" : MessageLookupByLibrary.simpleMessage("Wallet keys can only contain 64 chars in hex"),
     "error_text_node_address" : MessageLookupByLibrary.simpleMessage("Please enter a iPv4 address"),
     "error_text_node_port" : MessageLookupByLibrary.simpleMessage("Node port can only contain numbers between 0 and 65535"),
-    "error_text_oxen" : MessageLookupByLibrary.simpleMessage("OXEN value can\'t exceed available balance.\nThe number of fraction digits must be less or equal to 12"),
+    "error_text_graft" : MessageLookupByLibrary.simpleMessage("graft value can\'t exceed available balance.\nThe number of fraction digits must be less or equal to 12"),
     "error_text_payment_id" : MessageLookupByLibrary.simpleMessage("Payment ID can only contain from 16 to 64 chars in hex"),
     "error_text_service_node" : MessageLookupByLibrary.simpleMessage("A Service Node key can only contain 64 chars in hex"),
     "error_text_subaddress_name" : MessageLookupByLibrary.simpleMessage("Subaddress name can\'t contain ` , \' \" symbols\nand must be between 1 and 20 characters long"),
@@ -122,7 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "faq" : MessageLookupByLibrary.simpleMessage("FAQ"),
     "fetching" : MessageLookupByLibrary.simpleMessage("Fetching"),
     "filters" : MessageLookupByLibrary.simpleMessage("Filters"),
-    "first_wallet_text" : MessageLookupByLibrary.simpleMessage("Awesome wallet\nfor Oxen"),
+    "first_wallet_text" : MessageLookupByLibrary.simpleMessage("Awesome wallet\nfor graft"),
     "full_balance" : MessageLookupByLibrary.simpleMessage("Full Balance"),
     "hidden_balance" : MessageLookupByLibrary.simpleMessage("Hidden Balance"),
     "id" : MessageLookupByLibrary.simpleMessage("ID: "),
@@ -145,11 +145,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "nothing_staked" : MessageLookupByLibrary.simpleMessage("Nothing staked yet"),
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
     "openalias_alert_content" : m9,
-    "openalias_alert_title" : MessageLookupByLibrary.simpleMessage("OXEN Recipient Detected"),
+    "openalias_alert_title" : MessageLookupByLibrary.simpleMessage("graft Recipient Detected"),
     "outgoing" : MessageLookupByLibrary.simpleMessage("Outgoing"),
-    "oxen_available_balance" : MessageLookupByLibrary.simpleMessage("OXEN Available Balance"),
-    "oxen_full_balance" : MessageLookupByLibrary.simpleMessage("OXEN Full Balance"),
-    "oxen_hidden" : MessageLookupByLibrary.simpleMessage("OXEN Hidden"),
+    "graft_available_balance" : MessageLookupByLibrary.simpleMessage("graft Available Balance"),
+    "graft_full_balance" : MessageLookupByLibrary.simpleMessage("graft Full Balance"),
+    "graft_hidden" : MessageLookupByLibrary.simpleMessage("graft Hidden"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "paste" : MessageLookupByLibrary.simpleMessage("Paste"),
     "pending" : MessageLookupByLibrary.simpleMessage(" (pending)"),
@@ -170,7 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rescan" : MessageLookupByLibrary.simpleMessage("Rescan"),
     "reset" : MessageLookupByLibrary.simpleMessage("Reset"),
     "restore_address" : MessageLookupByLibrary.simpleMessage("Address"),
-    "restore_description_from_backup" : MessageLookupByLibrary.simpleMessage("You can restore the whole Oxen Wallet app from your back-up file"),
+    "restore_description_from_backup" : MessageLookupByLibrary.simpleMessage("You can restore the whole graft Wallet app from your back-up file"),
     "restore_description_from_keys" : MessageLookupByLibrary.simpleMessage("Restore your wallet from generated keystrokes saved from your private keys"),
     "restore_description_from_seed" : MessageLookupByLibrary.simpleMessage("Restore your wallet from either the 25 word or 13 word combination code"),
     "restore_description_from_seed_keys" : MessageLookupByLibrary.simpleMessage("Get back your wallet from seed/keys that you\'ve saved to secure place"),
@@ -208,10 +208,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "send_creating_transaction" : MessageLookupByLibrary.simpleMessage("Creating transaction"),
     "send_error_currency" : MessageLookupByLibrary.simpleMessage("Currency can only contain numbers"),
     "send_estimated_fee" : MessageLookupByLibrary.simpleMessage("Estimated fee:"),
-    "send_oxen" : MessageLookupByLibrary.simpleMessage("Send OXEN"),
-    "send_oxen_address" : MessageLookupByLibrary.simpleMessage("Oxen address"),
+    "send_graft" : MessageLookupByLibrary.simpleMessage("Send graft"),
+    "send_graft_address" : MessageLookupByLibrary.simpleMessage("graft address"),
     "send_priority" : m11,
-    "send_title" : MessageLookupByLibrary.simpleMessage("Send Oxen"),
+    "send_title" : MessageLookupByLibrary.simpleMessage("Send graft"),
     "send_your_wallet" : MessageLookupByLibrary.simpleMessage("Your wallet"),
     "sending" : MessageLookupByLibrary.simpleMessage("Sending"),
     "sent" : MessageLookupByLibrary.simpleMessage("Sent"),
@@ -245,7 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "spend_key_private" : MessageLookupByLibrary.simpleMessage("Spend key (private)"),
     "spend_key_public" : MessageLookupByLibrary.simpleMessage("Spend key (public)"),
     "stake_more" : MessageLookupByLibrary.simpleMessage("Stake more"),
-    "stake_oxen" : MessageLookupByLibrary.simpleMessage("Stake Oxen"),
+    "stake_graft" : MessageLookupByLibrary.simpleMessage("Stake graft"),
     "start_staking" : MessageLookupByLibrary.simpleMessage("Start staking"),
     "status" : MessageLookupByLibrary.simpleMessage("Status: "),
     "subaddress_title" : MessageLookupByLibrary.simpleMessage("Subaddress list"),
@@ -287,12 +287,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "wallet_list_loading_wallet" : m16,
     "wallet_list_removing_wallet" : m17,
     "wallet_list_restore_wallet" : MessageLookupByLibrary.simpleMessage("Restore Wallet"),
-    "wallet_list_title" : MessageLookupByLibrary.simpleMessage("Oxen Wallet"),
+    "wallet_list_title" : MessageLookupByLibrary.simpleMessage("graft Wallet"),
     "wallet_menu" : MessageLookupByLibrary.simpleMessage("Menu"),
     "wallet_name" : MessageLookupByLibrary.simpleMessage("Wallet name"),
     "wallet_restoration_store_incorrect_seed_length" : MessageLookupByLibrary.simpleMessage("Incorrect seed length"),
     "wallets" : MessageLookupByLibrary.simpleMessage("Wallets"),
-    "welcome" : MessageLookupByLibrary.simpleMessage("WELCOME\nTO OXEN WALLET"),
+    "welcome" : MessageLookupByLibrary.simpleMessage("WELCOME\nTO graft WALLET"),
     "widgets_address" : MessageLookupByLibrary.simpleMessage("Address"),
     "widgets_or" : MessageLookupByLibrary.simpleMessage("or"),
     "widgets_restore_from_blockheight" : MessageLookupByLibrary.simpleMessage("Restore from blockheight"),

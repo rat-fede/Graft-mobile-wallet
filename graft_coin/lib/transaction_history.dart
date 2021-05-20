@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/src/native/transaction_history.dart'
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/src/native/transaction_history.dart'
     as transaction_history;
 
 void refreshTransactions() => transaction_history.transactionsRefreshNative();

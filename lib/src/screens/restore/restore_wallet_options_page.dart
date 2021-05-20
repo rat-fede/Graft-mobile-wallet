@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/screens/restore/widgets/restore_button.dart';
-import 'package:oxen_wallet/src/screens/restore/widgets/image_widget.dart';
-import 'package:oxen_wallet/src/screens/restore/widgets/base_restore_widget.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/screens/restore/widgets/restore_button.dart';
+import 'package:graft_wallet/src/screens/restore/widgets/image_widget.dart';
+import 'package:graft_wallet/src/screens/restore/widgets/base_restore_widget.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
 import 'package:provider/provider.dart';
 
 class RestoreWalletOptionsPage extends BasePage {
@@ -52,8 +52,8 @@ class RestoreWalletOptionsPage extends BasePage {
             image: _imageKeys,
             aspectRatioImage: _aspectRatioImage,
             isLargeScreen: isLargeScreen),
-        titleColor: OxenPalette.teal,
-        color: OxenPalette.teal,
+        titleColor: graftPalette.teal,
+        color: graftPalette.teal,
         title: S.of(context).restore_title_from_keys,
         description: S.of(context).restore_description_from_keys,
         textButton: S.of(context).restore_next,

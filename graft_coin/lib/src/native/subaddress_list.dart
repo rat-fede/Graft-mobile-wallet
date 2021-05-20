@@ -1,27 +1,27 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:oxen_coin/src/oxen_api.dart';
-import 'package:oxen_coin/src/util/signatures.dart';
-import 'package:oxen_coin/src/util/types.dart';
+import 'package:graft_coin/src/graft_api.dart';
+import 'package:graft_coin/src/util/signatures.dart';
+import 'package:graft_coin/src/util/types.dart';
 
-final subaddressSizeNative = oxenApi
+final subaddressSizeNative = graftApi
     .lookup<NativeFunction<subaddress_size>>('subaddress_size')
     .asFunction<SubaddressSize>();
 
-final subaddressRefreshNative = oxenApi
+final subaddressRefreshNative = graftApi
     .lookup<NativeFunction<subaddress_refresh>>('subaddress_refresh')
     .asFunction<SubaddressRefresh>();
 
-final subaddressGetAllNative = oxenApi
+final subaddressGetAllNative = graftApi
     .lookup<NativeFunction<subaddress_get_all>>('subaddress_get_all')
     .asFunction<SubaddressGetAll>();
 
-final subaddressAddNewNative = oxenApi
+final subaddressAddNewNative = graftApi
     .lookup<NativeFunction<subaddress_add_new>>('subaddress_add_row')
     .asFunction<SubaddressAddNew>();
 
-final subaddressSetLabelNative = oxenApi
+final subaddressSetLabelNative = graftApi
     .lookup<NativeFunction<subaddress_set_label>>('subaddress_set_label')
     .asFunction<SubaddressSetLabel>();
 

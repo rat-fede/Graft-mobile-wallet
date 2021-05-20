@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/wallet/transaction/transaction_direction.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/wallet/transaction/transaction_direction.dart';
 
 class TransactionRow extends StatelessWidget {
   TransactionRow(
@@ -40,13 +40,13 @@ class TransactionRow extends StatelessWidget {
                     ? Icons.arrow_downward_rounded
                     : Icons.arrow_upward_rounded,
                 color: direction == TransactionDirection.incoming
-                    ? OxenPalette.lime
-                    : OxenPalette.lightRed,
+                    ? graftPalette.lime
+                    : graftPalette.lightRed,
               ),
               decoration: BoxDecoration(
                 color: direction == TransactionDirection.incoming
-                    ? OxenPalette.limeWithOpacity
-                    : OxenPalette.lightRedWithOpacity,
+                    ? graftPalette.limeWithOpacity
+                    : graftPalette.lightRedWithOpacity,
                 shape: BoxShape.circle,
               ),
             ),

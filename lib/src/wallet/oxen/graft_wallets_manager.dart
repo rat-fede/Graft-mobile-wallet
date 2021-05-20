@@ -3,15 +3,15 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:oxen_coin/wallet_manager.dart' as oxen_wallet_manager;
-import 'package:oxen_wallet/src/wallet/wallet_info.dart';
-import 'package:oxen_wallet/src/wallet/wallet_type.dart';
-import 'package:oxen_wallet/src/wallet/wallets_manager.dart';
-import 'package:oxen_wallet/src/wallet/wallet.dart';
-import 'package:oxen_wallet/src/wallet/wallet_description.dart';
+import 'package:graft_coin/wallet_manager.dart' as graft_wallet_manager;
+import 'package:graft_wallet/src/wallet/wallet_info.dart';
+import 'package:graft_wallet/src/wallet/wallet_type.dart';
+import 'package:graft_wallet/src/wallet/wallets_manager.dart';
+import 'package:graft_wallet/src/wallet/wallet.dart';
+import 'package:graft_wallet/src/wallet/wallet_description.dart';
 
-import 'package:oxen_wallet/src/wallet/oxen/oxen_wallet.dart';
-import 'package:oxen_wallet/devtools.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_wallet.dart';
+import 'package:graft_wallet/devtools.dart';
 
 Future<String> pathForWallet({String name}) async {
   final directory = await getApplicationDocumentsDirectory();
@@ -25,10 +25,10 @@ Future<String> pathForWallet({String name}) async {
   return pathDir + '/$name';
 }
 
-class OxenWalletsManager extends WalletsManager {
-  OxenWalletsManager({@required this.walletInfoSource});
+class graftWalletsManager extends WalletsManager {
+  graftWalletsManager({@required this.walletInfoSource});
 
-  static const type = WalletType.oxen;
+  static const type = WalletType.graft;
   static const nettype = isTestnet ? 1 : 0; // Mainnet: 0 Testnet: 1
 
   Box<WalletInfo> walletInfoSource;
@@ -39,9 +39,9 @@ class OxenWalletsManager extends WalletsManager {
       const isRecovery = false;
       final path = await pathForWallet(name: name);
 
-      await oxen_wallet_manager.createWallet(path: path, password: password, language: language, nettype: nettype);
+      await graft_wallet_manager.createWallet(path: path, password: password, language: language, nettype: nettype);
 
-      final wallet = await OxenWallet.createdWallet(
+      final wallet = await graftWallet.createdWallet(
           walletInfoSource: walletInfoSource,
           name: name,
           isRecovery: isRecovery);
@@ -49,7 +49,7 @@ class OxenWalletsManager extends WalletsManager {
 
       return wallet;
     } catch (e) {
-      print('OxenWalletsManager Error: $e');
+      print('graftWalletsManager Error: $e');
       rethrow;
     }
   }
@@ -61,7 +61,7 @@ class OxenWalletsManager extends WalletsManager {
       const isRecovery = true;
       final path = await pathForWallet(name: name);
 
-      await oxen_wallet_manager.restoreFromSeed(
+      await graft_wallet_manager.restoreFromSeed(
           path: path,
           password: password,
           seed: seed,
@@ -69,7 +69,7 @@ class OxenWalletsManager extends WalletsManager {
         nettype: nettype
       );
 
-      final wallet = await OxenWallet.createdWallet(
+      final wallet = await graftWallet.createdWallet(
           walletInfoSource: walletInfoSource,
           name: name,
           isRecovery: isRecovery,
@@ -78,7 +78,7 @@ class OxenWalletsManager extends WalletsManager {
 
       return wallet;
     } catch (e) {
-      print('OxenWalletsManager Error: $e');
+      print('graftWalletsManager Error: $e');
       rethrow;
     }
   }
@@ -96,7 +96,7 @@ class OxenWalletsManager extends WalletsManager {
       const isRecovery = true;
       final path = await pathForWallet(name: name);
 
-      await oxen_wallet_manager.restoreFromKeys(
+      await graft_wallet_manager.restoreFromKeys(
           path: path,
           password: password,
           language: language,
@@ -106,7 +106,7 @@ class OxenWalletsManager extends WalletsManager {
           viewKey: viewKey,
           spendKey: spendKey);
 
-      final wallet = await OxenWallet.createdWallet(
+      final wallet = await graftWallet.createdWallet(
           walletInfoSource: walletInfoSource,
           name: name,
           isRecovery: isRecovery,
@@ -115,7 +115,7 @@ class OxenWalletsManager extends WalletsManager {
 
       return wallet;
     } catch (e) {
-      print('OxenWalletsManager Error: $e');
+      print('graftWalletsManager Error: $e');
       rethrow;
     }
   }
@@ -125,12 +125,12 @@ class OxenWalletsManager extends WalletsManager {
     print('opening a Wallet with nettype $nettype');
     try {
       final path = await pathForWallet(name: name);
-      oxen_wallet_manager.openWallet(path: path, password: password, nettype: nettype);
-      final wallet = await OxenWallet.load(walletInfoSource, name, type);
+      graft_wallet_manager.openWallet(path: path, password: password, nettype: nettype);
+      final wallet = await graftWallet.load(walletInfoSource, name, type);
       await wallet.updateInfo();
       return wallet;
     } catch (e) {
-      print('OxenWalletsManager Error: $e');
+      print('graftWalletsManager Error: $e');
       rethrow;
     }
   }
@@ -139,9 +139,9 @@ class OxenWalletsManager extends WalletsManager {
   Future<bool> isWalletExit(String name) async {
     try {
       final path = await pathForWallet(name: name);
-      return oxen_wallet_manager.isWalletExist(path: path);
+      return graft_wallet_manager.isWalletExist(path: path);
     } catch (e) {
-      print('OxenWalletsManager Error: $e');
+      print('graftWalletsManager Error: $e');
       rethrow;
     }
   }
@@ -150,7 +150,7 @@ class OxenWalletsManager extends WalletsManager {
   Future remove(WalletDescription wallet) async {
     final dir = await getApplicationDocumentsDirectory();
     final root = dir.path.replaceAll('app_flutter', 'files');
-    final walletFilePath = root + '/oxen_coin/' + wallet.name;
+    final walletFilePath = root + '/graft_coin/' + wallet.name;
     final keyPath = walletFilePath + '.keys';
     final addressFilePath = walletFilePath + '.address.txt';
     final walletFile = File(walletFilePath);

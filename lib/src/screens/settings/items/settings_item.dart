@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/src/screens/settings/attributes.dart';
+import 'package:graft_wallet/src/screens/settings/attributes.dart';
 
 class SettingsItem {
   SettingsItem(

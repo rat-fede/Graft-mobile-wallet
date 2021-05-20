@@ -1,4 +1,4 @@
-library oxen_coin;
+library graft_coin;
 
 export 'src/structs/account_row.dart';
 export 'src/structs/pending_transaction.dart';

@@ -1,9 +1,9 @@
-#import "OxenCoinPlugin.h"
-#import <oxen_coin/oxen_coin-Swift.h>
+#import "graftCoinPlugin.h"
+#import <graft_coin/graft_coin-Swift.h>
 //#include "../External/android/monero/include/wallet2_api.h"
 
-@implementation OxenCoinPlugin
+@implementation graftCoinPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftOxenCoinPlugin registerWithRegistrar:registrar];
+  [SwiftgraftCoinPlugin registerWithRegistrar:registrar];
 }
 @end

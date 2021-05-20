@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/domain/common/fiat_currency.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/domain/common/fiat_currency.dart';
 import 'package:http/http.dart';
 
-const fiatApiAuthority = 'oxen.observer';
+const fiatApiAuthority = 'graft.observer';
 
 Future<double> fetchPriceFor({CryptoCurrency crypto, FiatCurrency fiat}) async {
   var price = 0.0;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 
 class SettingsLinktListRow extends StatelessWidget {
   SettingsLinktListRow(
@@ -35,7 +35,7 @@ class SettingsLinktListRow extends StatelessWidget {
         ),
         trailing: Text(
           link,
-          style: TextStyle(fontSize: 14.0, color: OxenPalette.teal),
+          style: TextStyle(fontSize: 14.0, color: graftPalette.teal),
         ),
         onTap: onTaped,
       ),

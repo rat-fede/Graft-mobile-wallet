@@ -1,5 +1,5 @@
 # Deployment
-How to deploy the Oxen Wallet.
+How to deploy the graft Wallet.
 
 1. Get Dependencies from pub
    ```
@@ -11,10 +11,10 @@ How to deploy the Oxen Wallet.
     flutter pub run build_runner build
    ```
 
-3. Add the Oxen static libs
+3. Add the graft static libs
    ```
-   ./tool/download-android-deps.sh https://oxen.rocks/oxen-io/oxen-core/oxen-stable-android-deps-LATEST.tar.xz
-   ./tool/download-ios-deps.sh https://oxen.rocks/oxen-io/oxen-core/oxen-stable-ios-deps-LATEST.tar.xz
+   ./tool/download-android-deps.sh https://graft.rocks/graft-io/graft-core/graft-stable-android-deps-LATEST.tar.xz
+   ./tool/download-ios-deps.sh https://graft.rocks/graft-io/graft-core/graft-stable-ios-deps-LATEST.tar.xz
    ```
 
 4. Generate Launcher Icons

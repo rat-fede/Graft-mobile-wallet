@@ -2,8 +2,8 @@ import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/src/native/stake.dart' as stake_native;
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/src/native/stake.dart' as stake_native;
 
 int countOfTransactions() => stake_native.stakeCountNative();
 

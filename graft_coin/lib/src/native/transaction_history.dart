@@ -1,34 +1,34 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/src/exceptions/creation_transaction_exception.dart';
-import 'package:oxen_coin/src/oxen_api.dart';
-import 'package:oxen_coin/src/structs/ut8_box.dart';
-import 'package:oxen_coin/src/util/signatures.dart';
-import 'package:oxen_coin/src/util/types.dart';
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/src/exceptions/creation_transaction_exception.dart';
+import 'package:graft_coin/src/graft_api.dart';
+import 'package:graft_coin/src/structs/ut8_box.dart';
+import 'package:graft_coin/src/util/signatures.dart';
+import 'package:graft_coin/src/util/types.dart';
 
-final transactionsRefreshNative = oxenApi
+final transactionsRefreshNative = graftApi
     .lookup<NativeFunction<transactions_refresh>>('transactions_refresh')
     .asFunction<TransactionsRefresh>();
 
-final transactionsCountNative = oxenApi
+final transactionsCountNative = graftApi
     .lookup<NativeFunction<transactions_count>>('transactions_count')
     .asFunction<TransactionsCount>();
 
-final transactionsGetAllNative = oxenApi
+final transactionsGetAllNative = graftApi
     .lookup<NativeFunction<transactions_get_all>>('transactions_get_all')
     .asFunction<TransactionsGetAll>();
 
-final transactionCreateNative = oxenApi
+final transactionCreateNative = graftApi
     .lookup<NativeFunction<transaction_create>>('transaction_create')
     .asFunction<TransactionCreate>();
 
-final transactionCommitNative = oxenApi
+final transactionCommitNative = graftApi
     .lookup<NativeFunction<transaction_commit>>('transaction_commit')
     .asFunction<TransactionCommit>();
 
-final transactionEstimateFeeNative = oxenApi
+final transactionEstimateFeeNative = graftApi
     .lookup<NativeFunction<transaction_estimate_fee>>(
         'transaction_estimate_fee')
     .asFunction<TransactionEstimateFee>();

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_description.dart';
-import 'package:oxen_wallet/src/screens/dashboard/dashboard_page.dart';
-import 'package:oxen_wallet/src/stores/action_list/action_list_store.dart';
-import 'package:oxen_wallet/src/stores/action_list/transaction_filter_store.dart';
-import 'package:oxen_wallet/src/stores/price/price_store.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/stores/wallet/wallet_store.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_description.dart';
+import 'package:graft_wallet/src/screens/dashboard/dashboard_page.dart';
+import 'package:graft_wallet/src/stores/action_list/action_list_store.dart';
+import 'package:graft_wallet/src/stores/action_list/transaction_filter_store.dart';
+import 'package:graft_wallet/src/stores/price/price_store.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/stores/wallet/wallet_store.dart';
 import 'package:provider/provider.dart';
 
 Widget createDashboardPage(

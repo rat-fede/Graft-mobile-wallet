@@ -2,17 +2,17 @@ import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/common/crypto_currency.dart';
-import 'package:oxen_wallet/src/domain/common/openalias_record.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/stores/price/price_store.dart';
-import 'package:oxen_wallet/src/stores/send/sending_state.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/oxen_stake_transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/oxen_transaction_creation_credentials.dart';
-import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_description.dart';
-import 'package:oxen_wallet/src/wallet/transaction/pending_transaction.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/common/crypto_currency.dart';
+import 'package:graft_wallet/src/domain/common/openalias_record.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/stores/price/price_store.dart';
+import 'package:graft_wallet/src/stores/send/sending_state.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/graft_stake_transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/graft_transaction_creation_credentials.dart';
+import 'package:graft_wallet/src/wallet/graft/transaction/transaction_description.dart';
+import 'package:graft_wallet/src/wallet/transaction/pending_transaction.dart';
 
 part 'send_store.g.dart';
 
@@ -67,7 +67,7 @@ abstract class SendStoreBase with Store {
           (cryptoAmount == S.current.all
               ? null
               : cryptoAmount.replaceAll(',', '.'));
-      final credentials = OxenStakeTransactionCreationCredentials(
+      final credentials = graftStakeTransactionCreationCredentials(
           address: address, amount: _amount);
 
       _pendingTransaction = await walletService.createStake(credentials);
@@ -86,7 +86,7 @@ abstract class SendStoreBase with Store {
           (cryptoAmount == S.current.all
               ? null
               : cryptoAmount.replaceAll(',', '.'));
-      final credentials = OxenTransactionCreationCredentials(
+      final credentials = graftTransactionCreationCredentials(
           address: address,
           amount: _amount,
           priority: settingsStore.transactionPriority);
@@ -149,7 +149,7 @@ abstract class SendStoreBase with Store {
   @action
   Future _calculateFiatAmount() async {
     final symbol = PriceStoreBase.generateSymbolForPair(
-        fiat: settingsStore.fiatCurrency, crypto: CryptoCurrency.oxen);
+        fiat: settingsStore.fiatCurrency, crypto: CryptoCurrency.graft);
     final price = priceStore.prices[symbol] ?? 0;
 
     try {
@@ -163,7 +163,7 @@ abstract class SendStoreBase with Store {
   @action
   Future _calculateCryptoAmount() async {
     final symbol = PriceStoreBase.generateSymbolForPair(
-        fiat: settingsStore.fiatCurrency, crypto: CryptoCurrency.oxen);
+        fiat: settingsStore.fiatCurrency, crypto: CryptoCurrency.graft);
     final price = priceStore.prices[symbol] ?? 0;
 
     try {
@@ -193,7 +193,7 @@ abstract class SendStoreBase with Store {
     isValid = regExp.hasMatch(value);
     if (isValid && cryptoCurrency != null) {
       switch (cryptoCurrency) {
-        case CryptoCurrency.oxen:
+        case CryptoCurrency.graft:
         case CryptoCurrency.xmr:
           isValid = (value.length == 95) ||
               (value.length == 97) || // Testnet addresses have 2 extra bits indicating the network id
@@ -247,7 +247,7 @@ abstract class SendStoreBase with Store {
     errorMessage = isValid ? null : S.current.error_text_address;
   }
 
-  void validateOXEN(String amount, int availableBalance) {
+  void validategraft(String amount, int availableBalance) {
     const maxValue = 18446744.073709551616;
     const pattern = '^([0-9]+([.][0-9]{0,12})?|[.][0-9]{1,12})\$|ALL';
     final value = amount.replaceAll(',', '.');
@@ -270,7 +270,7 @@ abstract class SendStoreBase with Store {
       isValid = false;
     }
 
-    errorMessage = isValid ? null : S.current.error_text_oxen;
+    errorMessage = isValid ? null : S.current.error_text_graft;
   }
 
   void validateFiat(String amount, {double maxValue}) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/src/widgets/nav/nav_list_trailing.dart';
+import 'package:graft_wallet/src/widgets/nav/nav_list_trailing.dart';
 
 class NavListArrow extends StatelessWidget {
   NavListArrow({this.text, this.leading, this.onTap});

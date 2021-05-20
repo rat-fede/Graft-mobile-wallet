@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/src/widgets/standart_switch.dart';
-import 'package:oxen_wallet/theme_changer.dart';
-import 'package:oxen_wallet/themes.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/src/widgets/standart_switch.dart';
+import 'package:graft_wallet/theme_changer.dart';
+import 'package:graft_wallet/themes.dart';
 import 'package:provider/provider.dart';
 
 class SettingsSwitchListRow extends StatelessWidget {

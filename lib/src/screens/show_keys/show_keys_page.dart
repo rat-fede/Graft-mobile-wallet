@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/stores/wallet/wallet_keys_store.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/stores/wallet/wallet_keys_store.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
 
 class ShowKeysPage extends BasePage {
   @override

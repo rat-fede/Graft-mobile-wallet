@@ -1,30 +1,30 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_coin/src/exceptions/creation_transaction_exception.dart';
-import 'package:oxen_coin/src/oxen_api.dart';
-import 'package:oxen_coin/src/structs/ut8_box.dart';
-import 'package:oxen_coin/src/util/signatures.dart';
-import 'package:oxen_coin/src/util/types.dart';
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_coin/src/exceptions/creation_transaction_exception.dart';
+import 'package:graft_coin/src/graft_api.dart';
+import 'package:graft_coin/src/structs/ut8_box.dart';
+import 'package:graft_coin/src/util/signatures.dart';
+import 'package:graft_coin/src/util/types.dart';
 
-final stakeCountNative = oxenApi
+final stakeCountNative = graftApi
     .lookup<NativeFunction<stake_count>>('stake_count')
     .asFunction<StakeCount>();
 
-final stakeGetAllNative = oxenApi
+final stakeGetAllNative = graftApi
     .lookup<NativeFunction<stake_get_all>>('stake_get_all')
     .asFunction<StakeGetAll>();
 
-final stakeCreateNative = oxenApi
+final stakeCreateNative = graftApi
     .lookup<NativeFunction<stake_create>>('stake_create')
     .asFunction<StakeCreate>();
 
-final canRequestUnstakeNative = oxenApi
+final canRequestUnstakeNative = graftApi
     .lookup<NativeFunction<can_request_unstake>>('can_request_stake_unlock')
     .asFunction<CanRequestUnstake>();
 
-final submitStakeUnlockNative = oxenApi
+final submitStakeUnlockNative = graftApi
     .lookup<NativeFunction<submit_stake_unlock>>('submit_stake_unlock')
     .asFunction<SubmitStakeUnlock>();
 

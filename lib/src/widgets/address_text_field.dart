@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/routes.dart';
-import 'package:oxen_wallet/src/domain/common/contact.dart';
-import 'package:oxen_wallet/src/domain/common/qr_scanner.dart';
-import 'package:oxen_wallet/src/wallet/oxen/subaddress.dart';
-import 'package:oxen_wallet/src/widgets/oxen_text_field.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/routes.dart';
+import 'package:graft_wallet/src/domain/common/contact.dart';
+import 'package:graft_wallet/src/domain/common/qr_scanner.dart';
+import 'package:graft_wallet/src/wallet/graft/subaddress.dart';
+import 'package:graft_wallet/src/widgets/graft_text_field.dart';
 
 enum AddressTextFieldOption { qrCode, addressBook, subaddressList }
 
@@ -37,7 +37,7 @@ class AddressTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OxenTextField(
+    return graftTextField(
       enabled: isActive,
       controller: controller,
       focusNode: focusNode,

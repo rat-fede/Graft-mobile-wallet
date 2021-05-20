@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:oxen_coin/transaction_history.dart' as transaction_history;
-import 'package:oxen_coin/oxen_coin_structs.dart';
-import 'package:oxen_wallet/src/wallet/oxen/oxen_amount_format.dart';
+import 'package:graft_coin/transaction_history.dart' as transaction_history;
+import 'package:graft_coin/graft_coin_structs.dart';
+import 'package:graft_wallet/src/wallet/graft/graft_amount_format.dart';
 
 class PendingTransaction {
   PendingTransaction(
@@ -9,8 +9,8 @@ class PendingTransaction {
 
   PendingTransaction.fromTransactionDescription(
       PendingTransactionDescription transactionDescription)
-      : amount = oxenAmountToString(transactionDescription.amount),
-        fee = oxenAmountToString(transactionDescription.fee),
+      : amount = graftAmountToString(transactionDescription.amount),
+        fee = graftAmountToString(transactionDescription.fee),
         hash = transactionDescription.hash,
         _pointerAddress = transactionDescription.pointerAddress;
 

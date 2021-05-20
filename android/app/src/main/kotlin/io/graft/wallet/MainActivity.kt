@@ -1,4 +1,4 @@
-package io.oxen.wallet
+package io.graft.wallet
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterFragmentActivity

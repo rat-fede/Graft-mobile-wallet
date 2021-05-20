@@ -1,9 +1,9 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/stores/settings/settings_store.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 abstract class PinCodeWidget extends StatefulWidget {
   PinCodeWidget({Key key, this.onPinCodeEntered, this.hasLengthSwitcher})
@@ -110,7 +110,7 @@ class PinCodeState<T extends PinCodeWidget> extends State<T> {
                   height: size,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: isFilled ? OxenPalette.teal : Colors.transparent,
+                    color: isFilled ? graftPalette.teal : Colors.transparent,
                     border: Border.all(color: Palette.wildDarkBlue),
                   ));
             }),

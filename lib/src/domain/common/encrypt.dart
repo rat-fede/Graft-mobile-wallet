@@ -1,5 +1,5 @@
 import 'package:encrypt/encrypt.dart';
-import 'package:oxen_wallet/.secrets.g.dart' as secrets;
+import 'package:graft_wallet/.secrets.g.dart' as secrets;
 
 String encrypt({String source, String key, int keyLength = 16}) {
   final _key = Key.fromUtf8(key);

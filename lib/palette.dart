@@ -69,7 +69,7 @@ class PaletteDark {
   static const Color wildDarkBlue = Color.fromRGBO(155, 172, 197, 0.8);
 }
 
-class OxenPalette {
+class graftPalette {
   // Primary
   static const Color navy = Color.fromRGBO(31, 28, 71, 1.0); // #1F1C47
   static const Color teal = Color.fromRGBO(18, 199, 186, 1.0); // #12C7BA

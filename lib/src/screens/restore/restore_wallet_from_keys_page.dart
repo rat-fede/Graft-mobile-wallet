@@ -5,17 +5,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_list_service.dart';
-import 'package:oxen_wallet/src/domain/services/wallet_service.dart';
-import 'package:oxen_wallet/src/stores/wallet_restoration/wallet_restoration_store.dart';
-import 'package:oxen_wallet/src/stores/wallet_restoration/wallet_restoration_state.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/widgets/blockchain_height_widget.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
-import 'package:oxen_wallet/palette.dart';
-import 'package:oxen_wallet/src/stores/seed_language/seed_language_store.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/domain/services/wallet_list_service.dart';
+import 'package:graft_wallet/src/domain/services/wallet_service.dart';
+import 'package:graft_wallet/src/stores/wallet_restoration/wallet_restoration_store.dart';
+import 'package:graft_wallet/src/stores/wallet_restoration/wallet_restoration_state.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/widgets/blockchain_height_widget.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/palette.dart';
+import 'package:graft_wallet/src/stores/seed_language/seed_language_store.dart';
 
 class RestoreWalletFromKeysPage extends BasePage {
   RestoreWalletFromKeysPage(
@@ -100,7 +100,7 @@ class _RestoreFromKeysFromState extends State<RestoreFromKeysFrom> {
                             hintText: S.of(context).restore_wallet_name,
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: OxenPalette.teal, width: 2.0)),
+                                    color: graftPalette.teal, width: 2.0)),
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Theme.of(context).focusColor,
@@ -129,7 +129,7 @@ class _RestoreFromKeysFromState extends State<RestoreFromKeysFrom> {
                             hintText: S.of(context).restore_address,
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: OxenPalette.teal, width: 2.0)),
+                                    color: graftPalette.teal, width: 2.0)),
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Theme.of(context).focusColor,
@@ -156,7 +156,7 @@ class _RestoreFromKeysFromState extends State<RestoreFromKeysFrom> {
                             hintText: S.of(context).restore_view_key_private,
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: OxenPalette.teal, width: 2.0)),
+                                    color: graftPalette.teal, width: 2.0)),
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Theme.of(context).focusColor,
@@ -183,7 +183,7 @@ class _RestoreFromKeysFromState extends State<RestoreFromKeysFrom> {
                             hintText: S.of(context).restore_spend_key_private,
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: OxenPalette.teal, width: 2.0)),
+                                    color: graftPalette.teal, width: 2.0)),
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Theme.of(context).focusColor,

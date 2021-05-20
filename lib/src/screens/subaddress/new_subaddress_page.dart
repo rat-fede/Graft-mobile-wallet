@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/screens/base_page.dart';
-import 'package:oxen_wallet/src/stores/subaddress_creation/subaddress_creation_state.dart';
-import 'package:oxen_wallet/src/stores/subaddress_creation/subaddress_creation_store.dart';
-import 'package:oxen_wallet/src/widgets/oxen_text_field.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
-import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/screens/base_page.dart';
+import 'package:graft_wallet/src/stores/subaddress_creation/subaddress_creation_state.dart';
+import 'package:graft_wallet/src/stores/subaddress_creation/subaddress_creation_store.dart';
+import 'package:graft_wallet/src/widgets/graft_text_field.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/src/widgets/scollable_with_bottom_section.dart';
 import 'package:provider/provider.dart';
 
 class NewSubaddressPage extends BasePage {
@@ -55,7 +55,7 @@ class NewSubaddressFormState extends State<NewSubaddressForm> {
           key: _formKey,
           child: Stack(children: <Widget>[
             Center(
-              child: OxenTextField(
+              child: graftTextField(
                   controller: _labelController,
                   hintText: S.of(context).new_subaddress_label_name,
                   validator: (value) {

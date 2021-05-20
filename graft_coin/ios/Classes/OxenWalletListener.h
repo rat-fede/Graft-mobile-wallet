@@ -1,11 +1,11 @@
 #include <stdint.h>
 
-struct OxenWalletListener;
+struct graftWalletListener;
 
 typedef int8_t (*on_new_block_callback)(uint64_t height);
 typedef int8_t (*on_need_to_refresh_callback)(void);
 
-typedef struct OxenWalletListener
+typedef struct graftWalletListener
 {
     // on_money_spent_callback *on_money_spent;
     // on_money_received_callback *on_money_received;
@@ -15,7 +15,7 @@ typedef struct OxenWalletListener
     // on_refreshed_callback *on_refreshed;
 
     on_new_block_callback on_new_block;
-} OxenWalletListener;
+} graftWalletListener;
 
 struct TestListener {
     // int8_t x;

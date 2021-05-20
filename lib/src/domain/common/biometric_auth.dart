@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
+import 'package:graft_wallet/generated/l10n.dart';
 
 class BiometricAuth {
   Future<bool> isAuthenticated() async {

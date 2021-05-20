@@ -18,7 +18,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: io.oxen.coin
-        pluginClass: OxenCoinPlugin
+        package: io.graft.coin
+        pluginClass: graftCoinPlugin
       ios:
-        pluginClass: OxenCoinPlugin
+        pluginClass: graftCoinPlugin

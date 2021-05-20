@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/generated/l10n.dart';
-import 'package:oxen_wallet/src/widgets/primary_button.dart';
+import 'package:graft_wallet/generated/l10n.dart';
+import 'package:graft_wallet/src/widgets/primary_button.dart';
 
-import 'oxen_dialog.dart';
+import 'graft_dialog.dart';
 
 Future<T> presentPicker<T extends Object>(
     BuildContext context, List<T> list) async {
@@ -12,7 +12,7 @@ Future<T> presentPicker<T extends Object>(
   return await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return OxenDialog(
+        return graftDialog(
             body: Container(
               padding: EdgeInsets.all(30),
               child: Column(

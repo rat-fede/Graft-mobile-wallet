@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:oxen_wallet/palette.dart';
+import 'package:graft_wallet/palette.dart';
 
 class NodeIndicator extends StatelessWidget {
   NodeIndicator({bool active = false})
-      : _color = active ? OxenPalette.green : OxenPalette.red;
+      : _color = active ? graftPalette.green : graftPalette.red;
 
   final Color _color;
 

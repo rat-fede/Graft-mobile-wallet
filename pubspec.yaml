@@ -1,5 +1,5 @@
-name: oxen_wallet
-description: A Wallet for Oxen.
+name: graft_wallet
+description: A Wallet for graft.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -45,8 +45,8 @@ dependencies:
   esys_flutter_share: ^1.0.2
   date_range_picker: ^1.0.7
   dio: ^4.0.0
-  oxen_coin:
-    path: ./oxen_coin
+  graft_coin:
+    path: ./graft_coin
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
   local_auth: ^1.1.0
