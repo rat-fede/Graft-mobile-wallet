@@ -1,6 +1,6 @@
 # Graft Wallet
 
-The Graft Wallet is a Fork of the Cake/graft Wallet.
+The Graft Wallet is a Fork of the Cake/Oxen Wallet.
 
 ## Build
 
