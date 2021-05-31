@@ -1,0 +1,314 @@
+{
+  "welcome" : "ΚΑΛΩΣ ΗΡΘΑΤΕ\nΣΤΟ ΠΟΡΤΟΦΟΛΙ Graft",
+  "first_wallet_text" : "Φοβερό πορτοφόλι\nγια το Graft",
+  "please_make_selection" : "Κάντε την παρακάτω επιλογή για να\n δημιουργήσετε ή να ανακτήσετε το πορτοφόλι σας.",
+  "create_new" : "Δημιουργήστε νέο",
+  "restore_wallet" : "Επαναφορά πορτοφολιού",
+
+
+  "accounts" : "Λογαριασµοί",
+  "edit" : "Επεξεργασία",
+  "account" : "Λογαριασµός",
+  "add" : "Προσθήκη",
+
+
+  "address_book" : "Βιβλίο Διευθύνσεων",
+  "contact" : "Επαφή",
+  "please_select" : "Παρακαλώ επιλέξτε:",
+  "cancel" : "Ακύρωση",
+  "ok" : "OK",
+  "contact_name" : "Όνομα Επαφής",
+  "reset" : "Επαναφορά",
+  "save" : "Αποθήκευση",
+
+
+  "authenticated" : "Έλεγχος ταυτότητας",
+  "authentication" : "Αυθεντικοποίηση",
+  "failed_authentication" : "Αποτυχία ελέγχου ταυτότητας. {state_error}",
+
+
+  "wallet_menu" : "Μενού",
+  "Blocks_remaining" : "{status} εναπομείναν blocks",
+  "please_try_to_connect_to_another_node" : "Προσπαθήστε να συνδεθείτε σε έναν άλλο κόμβο",
+  "graft_hidden" : "κρυμμένα Graft",
+  "graft_available_balance" : "Διαθέσιμα Υπόλοιπα Graft",
+  "graft_full_balance" : "Graft Πλήρες Yπόλοιπο",
+  "send" : "Αποστολή",
+  "receive" : "Λήψη",
+  "transactions" : "Συναλλαγές",
+  "incoming" : "Εισερχόμενα",
+  "outgoing" : "Εξερχόμενα",
+  "transactions_by_date" : "Συναλλαγές κατά ημερομηνία",
+  "filters" : "Φίλτρα",
+  "today" : "Σήμερα",
+  "yesterday" : "Εχθές",
+  "received" : "Λήφθηκε",
+  "sent" : "Στάλθηκε",
+  "pending" : " (εκκρεμής)",
+  "rescan" : "Επανάληψη σάρωσης",
+  "reconnect" : "Επανασύνδεση",
+  "wallets" : "Πορτοφόλια",
+  "show_seed" : "Εμφάνιση φράση ανάκτησης",
+  "show_keys" : "Εμφάνιση Κλειδιών",
+  "address_book_menu" : "Βιβλίο διευθύνσεων",
+  "reconnection" : "Ανασύνδεση",
+  "reconnect_alert_text" : "Είστε βέβαιοι ότι θέλετε να συνδεθείτε ξανά;",
+  "reload_fiat": "Επαναφόρτωση δεδομένων fiat νομίσματος",
+
+
+  "clear" : "Καθαρισμός",
+  "error" : "Σφάλµα",
+
+
+  "copied_to_clipboard" : "Αντιγράφηκε στο Πρόχειρο",
+  "fetching" : "Ανάκτηση",
+  "id" : "Ταυτότητα: ",
+  "amount" : "Ποσό: ",
+  "status" : "Κατάσταση: ",
+  "confirm" : "Επιβεβαίωση",
+  "confirm_sending" : "Επιβεβαίωση αποστολής",
+  "commit_transaction_amount_fee" : "Δέσμευση συναλλαγής\nΠοσό: {amount}\nΤέλη: {fee}",
+  "sending" : "Γίνεται η αποστολή",
+  "transaction_sent" : "Η συναλλαγή εστάλη!",
+  "send_graft" : "Αποστολή Graft",
+
+  "faq" : "Συχνά Yποβαλλόμενες Eρωτήσεις",
+  "changelog" : "Καταγραφή αλλαγών",
+
+
+  "enter_your_pin" : "Εισαγάγετε το PIN σας",
+  "loading_your_wallet" : "Φόρτωση του πορτοφολιού σας",
+
+
+  "new_wallet" : "Νέο Πορτοφόλι",
+  "wallet_name" : "Όνομα Πορτοφολιού",
+  "continue_text" : "Συνεχίστε",
+
+
+  "node_new" : "Νέος Κόμβος",
+  "node_address" : "Διεύθυνση Κόμβου",
+  "node_port" : "Θύρα Κόμβου",
+  "login" : "Σύνδεση",
+  "password" : "Κωδικός Πρόσβασης",
+  "nodes" : "Κόμβοι",
+  "node_reset_settings_title" : "Επαναφορά ρυθμίσεων",
+  "nodes_list_reset_to_default_message" : "Είστε βέβαιοι ότι θέλετε να επαναφέρετε τις ρυθμίσεις στην προεπιλογή;?",
+  "change_current_node" : "Είστε βέβαιοι ότι θα αλλάξετε τον τρέχοντα κόμβο σε {node}?",
+  "change" : "Αλλαγή",
+  "remove_node" : "Κατάργηση κόμβου",
+  "remove_node_message" : "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον επιλεγμένο κόμβο;",
+  "remove" : "Αφαιρέστε",
+  "delete" : "Διαγράψτε",
+
+
+  "use" : "Μετάβαση σε  ",
+  "digit_pin" : "-ψηφίο PIN",
+
+
+  "share_address" : "Κοινοποίηση διεύθυνσης",
+  "receive_amount" : "Ποσό",
+  "subaddresses" : "Υποδιευθύνσεις",
+
+
+  "restore_restore_wallet" : "Ανάκτηση Πορτοφολιού",
+  "restore_title_from_seed_keys" : "Επαναφορά από φράση ανάκτησης/κλειδιά",
+  "restore_description_from_seed_keys" : "Πάρτε πίσω το πορτοφόλι σας από την φράση ανάκτησης/κλειδιά\n που έχετε αποθηκεύσει σε ασφαλές μέρος",
+  "restore_next" : "Επόμενο",
+  "restore_title_from_backup" : "Επαναφορά από ένα εφεδρικό αρχείο",
+  "restore_description_from_backup" : "Μπορείτε να επαναφέρετε ολόκληρη την εφαρμογή Πορτοφόλι Graft από το αντίγραφο ασφαλείας του αρχείου σας",
+  "restore_seed_keys_restore" : "Επαναφορά φράσης ανάκτησης/κλειδιά",
+  "restore_title_from_seed" : "Επαναφορά από φράση ανάκτησης",
+  "restore_description_from_seed" : "Επαναφέρετε το πορτοφόλι σας είτε από τον κωδικό συνδυασμού 25 λέξεων ή 13 λέξεων",
+  "restore_title_from_keys" : "Επαναφορά από κλειδιά",
+  "restore_description_from_keys" : "Επαναφέρετε το πορτοφόλι σας από δημιουργημένες πληκτρολογήσεις που έχουν αποθηκευτεί από τα ιδιωτικά σας κλειδιά",
+  "restore_wallet_name" : "Όνομα Πορτοφολιού",
+  "restore_address" : "Διεύθυνση",
+  "restore_view_key_private" : "Προβολή κλειδιού (ιδιωτικό)",
+  "restore_spend_key_private" : "Κλειδί δαπανών (ιδιωτικό)",
+  "restore_recover" : "Επαναφορά",
+  "restore_wallet_restore_description" : "Περιγραφή επαναφοράς πορτοφολιού",
+
+
+  "seed_title" : "Φράση ανάκτησης",
+  "seed_share" : "Μοιραστείτε την φράση ανάκτησης",
+  "copy" : "Αντιγραφή",
+
+
+  "seed_language_choose" : "Επιλέξτε γλώσσα για την φράση ανάκτησης",
+  "seed_language_next" : "Επόμενο",
+  "seed_language_english" : "Αγγλικά",
+  "seed_language_chinese" : "Κινέζικα",
+  "seed_language_dutch" : "Ολλανδικά",
+  "seed_language_german" : "Γερμανικά",
+  "seed_language_japanese" : "Ιαπωνικά",
+  "seed_language_portuguese" : "Πορτογαλικά",
+  "seed_language_russian" : "Ρωσικά",
+  "seed_language_spanish" : "Ισπανικά",
+  "seed_language_french" : "Γαλλικά",
+  "seed_language_italian" : "Ιταλικά",
+
+
+  "send_title" : "Στείλετε Graft",
+  "send_your_wallet" : "Το πορτοφόλι σας",
+  "send_graft_address" : "Διεύθυνση Graft",
+  "all" : "ΟΛΑ",
+  "send_error_currency" : "Το νόμισμα μπορεί να περιέχει μόνο αριθμούς",
+  "send_estimated_fee" : "Εκτιµώµενο τέλος:",
+  "send_priority" : "Επί του παρόντος, το τέλος ορίζεται σε προτεραιότητα{transactionPriority}.\nΗ προτεραιότητα συναλλαγής μπορεί να προσαρμοστεί στις ρυθμίσεις.",
+  "send_creating_transaction" : "Δημιουργία συναλλαγής",
+
+
+  "title_stakes": "Κλειδωμένα νομίσματα",
+  "title_new_stake": "Νέα κλειδωμένα νομίσματα",
+  "your_contributions" : "Οι συνεισφορές σας",
+  "start_staking" : "Αρχίστε να κλειδώνετε νομίσματα",
+  "stake_more" : "Κλειδώστε περισσότερα νομίσματα",
+  "nothing_staked" : "Δεν έχετε κλειδώσει κανένα νόμισμα μέχρι τώρα",
+  "service_node_key": "Κλειδί Κόμβου Υπηρεσίας",
+  "stake_graft": "Κλειδώστε Graft",
+  "title_confirm_unlock_stake": "Ξεκλειδώστε τα νομίσματα σας",
+  "body_confirm_unlock_stake": "Θέλετε πραγματικά να ξεκλειδώσετε τα νομίσματα σας από {serviceNodeKey}?",
+  "unlock_stake_requested": "Αίτημα ξεκλειδώματος",
+  "unable_unlock_stake": "Δεν είναι δυνατό το ξεκλείδωμα των νομισμάτων σας",
+
+
+  "settings_title" : "Ρυθμίσεις",
+  "settings_nodes" : "Κόμβοι",
+  "settings_current_node" : "Τρέχων κόμβος",
+  "settings_wallets" : "Πορτοφόλια",
+  "settings_display_balance_as" : "Εμφάνιση υπολοίπου ως",
+  "settings_balance_detail": "Δεκαδικά",
+  "settings_currency" : "Νόμισμα",
+  "settings_fee_priority" : "Προτεραιότητα χρέωσης",
+  "settings_save_recipient_address" : "Αποθήκευση διεύθυνσης παραλήπτη",
+  "settings_personal" : "Προσωπικό",
+  "settings_change_pin" : "Αλλαγή PIN",
+  "settings_change_language" : "Αλλάξτε γλώσσα",
+  "settings_allow_biometric_authentication" : "Να επιτρέπεται ο βιομετρικός έλεγχος ταυτότητας",
+  "settings_dark_mode" : "Σκοτεινή λειτουργία",
+  "settings_transactions" : "Συναλλαγές",
+  "settings_display_on_dashboard_list" : "Εμφάνιση στη λίστα ταμπλό",
+  "settings_all" : "ΟΛΑ",
+  "settings_none" : "Τίποτα",
+  "settings_support" : "Υποστήριξη",
+  "settings_terms_and_conditions" : "Οροι και Προϋποθέσεις",
+  "settings_enable_fiat_currency": "Ενεργοποίηση μετατροπής νομίσματος fiat",
+  "pin_is_incorrect" : "Το PIN δεν είναι σωστό",
+
+  "amount_detail_ultra": "9 - Ακραίο",
+  "amount_detail_none": "0 - Τίποτα",
+  "amount_detail_detailed": "4 - Λεπτομερής",
+  "amount_detail_normal": "2 - Κανονικό",
+
+
+  "setup_pin" : "Ρύθμιση PIN",
+  "enter_your_pin_again" : "Εισαγάγετε ξανά το pin σας",
+  "setup_successful" : "Το PIN σας έχει ρυθμιστεί με επιτυχία!",
+
+
+  "wallet_keys" : "Κλειδιά πορτοφολιού",
+  "view_key_private" : "Προβολή κλειδιού (ιδιωτικό)",
+  "view_key_public" : "Κλειδί προβολής (δημόσιο)",
+  "spend_key_private" : "Κλειδί δαπανών (ιδιωτικό)",
+  "spend_key_public" : "Κλειδί δαπανών (δημόσιο)",
+  "copied_key_to_clipboard" : "Αντιγράφηκε {key} στο Πρόχειρο",
+
+
+  "new_subaddress_title" : "Νέα δευτερεύουσα διεύθυνση",
+  "new_subaddress_label_name" : "Όνομα ετικέτας",
+  "new_subaddress_create" : "Δημιουργία",
+
+
+  "subaddress_title" : "Λίστα υπο-διευθύνσεων",
+
+
+  "transaction_details_title" : "Λεπτομέρειες Συναλλαγής",
+  "transaction_details_transaction_id" : "Ταυτότητα συναλλαγής",
+  "transaction_details_date" : "Ημερομηνία",
+  "transaction_details_height" : "Ύψος",
+  "transaction_details_amount" : "Ποσό",
+  "transaction_details_copied" : "{title} αντιγράφηκε στο Πρόχειρο",
+  "transaction_details_recipient_address" : "Διεύθυνση παραλήπτη",
+
+
+  "wallet_list_title" : "Πορτοφόλι Graft",
+  "wallet_list_create_new_wallet" : "Δημιουργία νέου Πορτοφολιού",
+  "wallet_list_restore_wallet" : "Επαναφορά Πορτοφολιού",
+  "wallet_list_load_wallet" : "Φορτώστε το πορτοφόλι",
+  "wallet_list_loading_wallet" : "Φόρτωση πορτοφολιού {wallet_name}",
+  "wallet_list_failed_to_load" : "Αποτυχία φόρτωσης πορτοφολιού {wallet_name}. {error}",
+  "wallet_list_removing_wallet" : "Κατάργηση πορτοφολιού {wallet_name}",
+  "wallet_list_failed_to_remove" : "Αποτυχία κατάργησης του πορτοφολιού {wallet_name}. {error}",
+
+
+  "widgets_address" : "Διεύθυνση",
+  "widgets_restore_from_blockheight" : "Επαναφορά από το ύψος του μπλοκ",
+  "widgets_restore_from_date" : "Επαναφορά από ημερομηνία",
+  "widgets_or" : "ή",
+  "widgets_seed" : "Φράση Ανάκτησης",
+
+
+  "router_no_route" : "Δεν έχει καθοριστεί διαδρομή για {name}",
+
+
+  "error_text_account_name" : "Το όνομα λογαριασμού μπορεί να περιέχει μόνο γράμματα, αριθμούς\n και πρέπει να έχει μήκος από 1 έως 15 χαρακτήρες",
+  "error_text_contact_name" : "Το όνομα της επαφής δεν μπορεί να περιέχει σύμβολα `,'\"\n και πρέπει να έχει μήκος μεταξύ 1 και 32 χαρακτήρων",
+  "error_text_address" : "Η διεύθυνση πορτοφολιού πρέπει να αντιστοιχεί στον τύπο\n του κρυπτονομίσματος",
+  "error_text_node_address" : "Εισαγάγετε μια διεύθυνση iPv4",
+  "error_text_node_port" : "Η θύρα κόμβου μπορεί να περιέχει μόνο αριθμούς μεταξύ 0 και 65535",
+  "error_text_payment_id" : "Το αναγνωριστικό πληρωμής μπορεί να περιέχει μόνο από 16 έως 64 χαρακτήρες σε δεκαεξαδικό",
+  "error_text_graft" : "η τιμή του Graft δεν μπορεί να υπερβαίνει το διαθέσιμο υπόλοιπο.\n Ο αριθμός των ψηφίων κλάσματος πρέπει να είναι μικρότερος ή ίσος με 12",
+  "error_text_fiat" : "Η αξία του ποσού δεν μπορεί να υπερβαίνει το διαθέσιμο υπόλοιπο.\n Ο αριθμός των ψηφίων κλάσματος πρέπει να είναι μικρότερος ή ίσος με 2",
+  "error_text_subaddress_name" : "Το όνομα της δευτερεύουσας διεύθυνσης δεν μπορεί να περιέχει σύμβολα `,'\" και πρέπει να έχει μήκος μεταξύ 1 και 20 χαρακτήρων",
+  "error_text_amount" : "Το ποσό μπορεί να περιέχει μόνο αριθμούς",
+  "error_text_wallet_name" : "Το όνομα του πορτοφολιού μπορεί να περιέχει μόνο γράμματα, αριθμούς\n και πρέπει να έχει μήκος από 1 έως 15 χαρακτήρες",
+  "error_text_keys" : "Τα κλειδιά πορτοφολιού μπορούν να περιέχουν μόνο 64 χαρακτήρες σε δεκαεξαδικό",
+  "error_text_crypto_currency" : "Ο αριθμός των ψηφίων κλάσματος\n πρέπει να είναι μικρότερος ή ίσος με 12",
+  "error_text_service_node" : "Ένα κλειδί κόμβου υπηρεσίας μπορεί να περιέχει μόνο 64 χαρακτήρες σε δεκαεξαδικό",
+
+
+  "auth_store_ban_timeout" : "απαγόρευση_χρονικού_ορίου",
+  "auth_store_banned_for" : "Απαγορεύεται η χρήση για ",
+  "auth_store_banned_minutes" : " λεπτά",
+  "auth_store_incorrect_password" : "Λάθος PIN",
+  "wallet_restoration_store_incorrect_seed_length" : "Λανθασμένο μέγεθος φράσης ανάκτησης",
+
+
+  "full_balance" : "Πλήρες Yπόλοιπο",
+  "available_balance" : "Διαθέσιμο Υπόλοιπο",
+  "hidden_balance" : "Κρυφό Υπόλοιπο",
+
+
+  "sync_status_synchronizing" : "ΣΥΓΧΡΟΝΙΣΜΟΣ",
+  "sync_status_synchronized" : "ΣΥΓΧΡΟΝΙΣΜΕΝΟ",
+  "sync_status_not_connected" : "ΜΗ ΣΥΝΔΕΔΕΜΕΝΟ",
+  "sync_status_starting_sync" : "ΕΝΑΡΞΗ ΣΥΝΚΡΙΣΜΟΥ",
+  "sync_status_failed_connect" : "ΑΠΟΤΥΧΗΜΕΝΗ ΣΥΝΔΕΣΗ ΣΤΟΝ ΚΟΜΒΟ",
+  "sync_status_connecting" : "ΓΙΝΕΤΑΙ ΣΥΝΔΕΣΗ",
+  "sync_status_connected" : "ΣΥΝΔΕΔΕΜΕΝΟ",
+
+
+  "transaction_priority_slow" : "Αργά",
+  "transaction_priority_blink": "Αναβοσβήσιμο",
+
+
+  "change_language" : "Αλλαγή γλώσσας",
+  "change_language_to" : "Αλλαγή γλώσσας σε {language}?",
+
+  "paste" : "Επικόλληση",
+  "restore_from_seed_placeholder" : "Παρακαλώ εισαγάγετε ή επικολλήστε την φράση ανάκτησης σας εδώ",
+  "add_new_word" : "Προσθέστε νέα λέξη",
+  "incorrect_seed" : "Το κείμενο που εισαγάγατε δεν είναι έγκυρο.",
+
+  "biometric_auth_reason" : "Σαρώστε το δακτυλικό σας αποτύπωμα για έλεγχο ταυτότητας",
+  "version" : "Έκδοση {currentVersion}",
+
+  "openalias_alert_title" : "Εντοπίστηκε παραλήπτης Graft",
+  "openalias_alert_content" : "Θα στέλνετε χρήματα στον\n{recipient_name}",
+
+  "dangerzone": "Επικίνδυνη ζώνη",
+  "yes_im_sure": "Ναι, είμαι σίγουρος!",
+  "never_give_your": "ΠΟΤΕ μην δώσετε το πορτοφόλι Graft {graft} σε κανέναν!",
+  "dangerzone_warning": "ΠΟΤΕ μην εισάγετε το πορτοφόλι Graft {item} σε οποιοδήποτε λογισμικό ή ιστότοπο εκτός από τα ΕΠΙΣΗΜΑΤΑ πορτοφόλια Graft που έχετε κατεβάσει απευθείας από το {app_store}, τον ιστότοπο του Graft ή το GitHub του Graft.\n Είστε βέβαιοι ότι θέλετε να αποκτήσετε πρόσβαση στο πορτοφόλι σας {item};",
+  "keys_title": "Κλειδιά"
+}

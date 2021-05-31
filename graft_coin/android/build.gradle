@@ -1,8 +1,10 @@
+package android
+
 group 'io.graft.coin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.4.10'
+    ext.kotlin_version = '1.5.10'
     repositories {
         google()
         jcenter()

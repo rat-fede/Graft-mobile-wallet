@@ -120,7 +120,7 @@ void main() async {
       Provider(create: (_) => nodes),
       Provider(create: (_) => transactionDescriptions),
       Provider(create: (_) => seedLanguageStore)
-    ], child: graftWalletApp()));
+    ], child: GraftWalletApp()));
   } catch (e) {
     runApp(MaterialApp(
       debugShowCheckedModeBanner: true,
@@ -154,8 +154,8 @@ Future<void> initialSetup(
   graft_wallet.onStartup();
 }
 
-class graftWalletApp extends StatelessWidget {
-  graftWalletApp() {
+class GraftWalletApp extends StatelessWidget {
+  GraftWalletApp() {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }

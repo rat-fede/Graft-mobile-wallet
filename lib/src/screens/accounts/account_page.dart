@@ -59,7 +59,7 @@ class AccountFormState extends State<AccountForm> {
             child: Column(
               children: <Widget>[
                 Center(
-                  child: graftTextField(
+                  child: GraftTextField(
                     hintText: S.of(context).account,
                     controller: _textController,
                     validator: (value) {
