@@ -33,14 +33,14 @@ dependencies:
   shared_preferences: ^0.5.12+4
   flutter_secure_storage: ^4.1.0
   provider: ^5.0.0
-  rxdart: ^0.22.2
+  rxdart: ^0.27.1
   yaml: ^3.1.0
   barcode_scan: any # outdated and should be replaced
   http: ^0.13.1
   path_provider: ^1.6.28
   mobx: ^1.2.1+1
   flutter_mobx: ^1.1.0+2
-  flutter_slidable: ^0.5.7
+  flutter_slidable: ^0.6.0
   # share: ^0.6.2+1
   esys_flutter_share: ^1.0.2
   date_range_picker: ^1.0.7

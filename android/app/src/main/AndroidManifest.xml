@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
 
     <application
-        android:label="graft Wallet"
+        android:label="Graft Wallet"
         android:icon="@mipmap/ic_launcher"
         android:extractNativeLibs="true"
         android:usesCleartextTraffic="true"
