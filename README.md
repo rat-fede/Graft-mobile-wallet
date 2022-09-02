@@ -27,6 +27,9 @@ The Graft Wallet is a Fork of the Cake/Oxen Wallet.
     flutter pub run flutter_launcher_icons:main
     ```
 
+
+ASD
+ASD
 5. Create Encryption Keys (Only needed if .secrets-<env>.json is empty)
     ```shell script
     dart tool/create_secrets.dart
